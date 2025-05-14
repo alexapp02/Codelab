@@ -42,24 +42,48 @@ Texto plano en una lista con viñetas:
 ## Apache Casandra
 Duration: 0:05:00
 
-### Cajas de información
-Texto plano.
+Apache Cassandra es un sistema de gestión de bases de datos **NoSQL** distribuido y altamente escalable, diseñado para manejar grandes volúmenes de datos en múltiples servidores sin un único punto de fallo.​ Es ideal para aplicaciones que requieren características como: **Alta disponibilidad**, **Alta velocidad de escritura** y **lectura, Escalabilidad horizontal** (puedes añadir más columnas fácilmente).
 
-### Lista con viñetas
-Texto plano en una lista con viñetas:
+### Historia de Apache Cassandra
 
-* Hola
-* CodeLab
-* Mundo
+* En 2007 **Facebook** crea Cassandra para gestionar el motor de búsqueda de mensajes (**Inbox Search**), combinando lo mejor de **Amazon Dynamo** (**alta disponibilidad**) y Google Bigtable (**modelo de datos flexible**).
+* En 2008 **Facebook** libera **Cassandra** como código abierto.
+* En 2009 **Cassandra** se convierte en un proyecto de **Apache Incubator**. Poco después, se vuelve un proyecto de nivel superior dentro de la **Apache Software Foundation**.
+* En 2010 Empresas como **Twitter**, **Netflix**, **eBay** y **Apple** comienzan a usar **Cassandra** para aplicaciones críticas.
+* En 2020 – 2024 Se lanzan versiones más estables como 3.x, 4.x, con mejoras en rendimiento, seguridad y facilidad de operación.
+* En la actualidad **Cassandra** es una de las bases de datos **NoSQL** más utilizadas en sistemas distribuidos, con una comunidad activa y soporte empresarial.
 
-¡Ya tienes tu lista con viñetas creada!
+### DDL de Apache Cassandra
+| Comando DDL | Descripción                                      | Ejemplo                                                                                                                               |
+|-------------|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| CREATE KEYSPACE | Crea un nuevo keyspace (una base lógica para las tablas)​       | `CREATE KEYSPACE tienda WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};​`                                  |
+| DROP KEYSPACE   | Elimina un KEYSPACE.                 | `DROP KEYSPACE tienda;`                                                                                                             |
+| CREATE TABLE  | Crea una nueva tabla con claves primarias definidas​      | `CREATE TABLE productos (id UUID PRIMARY KEY, nombre TEXT, precio DECIMAL);​`                                                                            |
+| ALTER TABLE   | Modifica una tabla existente (añadir columnas, por ejemplo)​. | `ALTER TABLE productos ADD stock INT;`                                                                                   |
+| DROP TABLE    | Elimina una tabla​                             | `DROP TABLE productos;​`                                                                                                                  |
+| USE           | Selecciona el keyspace activo.                          | `USE tienda;`                                                                                                                          |
 
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
+### DML de Apache Cassandra
+| Comando CQL | Descripción en Español                | Ejemplo                                                                 |
+|-------------|---------------------------------------|-------------------------------------------------------------------------|
+| INSERT      | Agrega nuevas filas o registros a las tablas | `INSERT INTO productos (id, nombre, precio, stock) VALUES (uuid(), 'Laptop', 3500.00, 20);` |
+| SELECT      | Consulta datos​ | `SELECT * FROM productos;​`                     |
+| UPDATE      | Modifica valores de una fila existente​. | `UPDATE productos SET stock = 15 WHERE id = ...;`   |
+| DELETE      | Elimina una fila o columna espécifica​      | `DELETE FROM productos WHERE id = ...;​`                                  |
 
-¡Ya tienes tu lista numerada creada!
+### Instalacion de Apache Cassandra
+### JAVA11
+* Es necesario que se instale java 11 para poder usar cassandra​
+### Variables de entorno​
+* Es necesario configurar java como variable de entorno para poder iniciarlizar cassandra​
+### Otros lenguajes​
+* En necesario el lenguaje de programacion con le que se interactuará con la base de datos​
+
+### Ejemplo en Apache Cassandra
+### Codificacion.
+![Descripción de la imagen](assets/CodeEjemploCassandra.png)
+### Salida en Cassandra DB
+![Descripción de la imagen](assets/SalidaEjemploCassandra.png)
 
 ## Microsoft Azure Cosmos DB
 Duration: 0:03:00
