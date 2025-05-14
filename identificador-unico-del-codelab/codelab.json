@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-05-14T11:57:03-05:00",
+  "id": "identificador-unico-del-codelab",
+  "duration": 29,
+  "title": "No-SQL Orientado a Columnas",
+  "summary": "El Codelab guiará a los usuarios a través de la comprensión fundamental de las bases de datos No-SQL orientadas a columnas, sus características distintivas, aplicaciones prácticas, pros y contras, y ejemplos concretos.",
+  "source": "Codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/tu_usuario/tu_repo/issues",
+  "ga": "UA-XXXXXX-X",
+  "url": "identificador-unico-del-codelab"
+}
