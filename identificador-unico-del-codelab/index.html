@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>No-SQL Orientado a Columnas</title>
+  <title>NO-SQL Orientado a Columnas</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
@@ -23,7 +23,7 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid="UA-XXXXXX-X"
                   id="identificador-unico-del-codelab"
-                  title="No-SQL Orientado a Columnas"
+                  title="NO-SQL Orientado a Columnas"
                   environment="web"
                   feedback-link="https://github.com/tu_usuario/tu_repo/issues">
     
@@ -140,24 +140,171 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="SckyllaDB" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="ScyllaDB" duration="3">
+        <h2 is-upgraded>¿La base de datos más rápida?</h2>
+<p><strong>ScyllaDB</strong> es una base de datos NoSQL distribuida, de código abierto, diseñada desde cero en <strong>C++</strong> para aprovechar al máximo el hardware moderno. Es una alternativa compatible con Apache Cassandra pero con un rendimiento superior.</p>
+<h2 is-upgraded>Características Clave</h2>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Lenguaje de Programación:</strong> Escrita en <strong>C++</strong>, a diferencia de otras como MongoDB que usan Java.</li>
+<li><strong>Compatibilidad:</strong> Soporta <strong>CQL</strong> (Cassandra Query Language) y utiliza formatos <strong>SSTable</strong>.</li>
+<li><strong>Modelo de Datos:</strong> Almacenamiento en <strong>columnas</strong>, similar a MySQL. No basado en documentos como MongoDB.</li>
+<li><strong>Motor Alternativo a Cassandra:</strong> Reescrito completamente para mejorar eficiencia.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
+<h2 is-upgraded>¿Por qué ScyllaDB es más rápida?</h2>
+<ul>
+<li><strong>Lenguaje de Bajo Nivel (C++):</strong> Menor sobrecarga comparado con Java.</li>
+<li><strong>Seastar:</strong> Biblioteca asincrónica que permite operaciones no bloqueantes. <ol type="1">
+<li>Menor latencia.</li>
+<li>Mayor rendimiento.</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+</li>
+<li><strong>Optimización del Hardware:</strong><ol type="1">
+<li>Exprime al máximo las capacidades del servidor moderno.</li>
+</ol>
+</li>
+</ul>
+<h2 is-upgraded>Adopción y Casos de uso</h2>
+<ul>
+<li><strong>Discord:</strong> Plataforma de comunicación masiva. <img alt="Discord" src="img\\d083a12c2800cf10.png"></li>
+<li><strong>Samsung:</strong> Diversas aplicaciones empresariales. <img alt="Samsung" src="img\\8c98e47ed2d93733.png"></li>
+<li><strong>AppsFlyer:</strong> Análisis de marketing. <img alt="AppsFlyer" src="img\\b9c84d9c17d13bbb.png"></li>
+<li><strong>Zillow:</strong> Mercado inmobiliario digital. <img alt="Zillow" src="img\\b8154d31776a6108.png"></li>
+<li><strong>Outbrain:</strong> Descubrimiento de contenido. <img alt="Outbrain" src="img\\16e8e373d1fabeff.png"></li>
+<li>Y muchas más empresas con alta demanda de rendimiento.</li>
+</ul>
+<h2 is-upgraded>Comandos DDL en ScyllaDB</h2>
+<p>Comandos más comúnes para definir y administrar la estructura de la base de datos.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Comando CQL</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>CREATE KEYSPACE</p>
+</td><td colspan="1" rowspan="1"><p>Crea un nuevo espacio de nombres (base de datos).</p>
+</td><td colspan="1" rowspan="1"><p><code>CREATE KEYSPACE mitienda WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DROP KEYSPACE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina un espacio de nombres existente.</p>
+</td><td colspan="1" rowspan="1"><p><code>DROP KEYSPACE mitienda;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>CREATE TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Crea una nueva tabla dentro del keyspace activo.</p>
+</td><td colspan="1" rowspan="1"><p><code>CREATE TABLE usuarios (id UUID PRIMARY KEY, nombre TEXT);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ALTER TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Modifica la estructura de una tabla (añadir/eliminar columnas).</p>
+</td><td colspan="1" rowspan="1"><p><code>ALTER TABLE usuarios ADD COLUMN email TEXT;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DROP TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una tabla existente.</p>
+</td><td colspan="1" rowspan="1"><p><code>DROP TABLE usuarios;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USE</p>
+</td><td colspan="1" rowspan="1"><p>Selecciona el keyspace activo.</p>
+</td><td colspan="1" rowspan="1"><p><code>USE mi_app;</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>Comandos DML en ScyllaDB</h2>
+<p>Comandos para trabajar con los datos dentro de las tablas.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Comando CQL</p>
+</td><td colspan="1" rowspan="1"><p>Descripción en Español</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>INSERT</p>
+</td><td colspan="1" rowspan="1"><p>Agrega nuevos registros a las tablas.</p>
+</td><td colspan="1" rowspan="1"><p><code>INSERT INTO usuarios (id, nombre, email) VALUES (uuid(), 'Ana', 'ana@email.com');</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>SELECT</p>
+</td><td colspan="1" rowspan="1"><p>Recupera datos de una o más tablas.</p>
+</td><td colspan="1" rowspan="1"><p><code>SELECT nombre, email FROM usuarios WHERE id = ...;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>UPDATE</p>
+</td><td colspan="1" rowspan="1"><p>Modifica registros existentes en una tabla.</p>
+</td><td colspan="1" rowspan="1"><p><code>UPDATE usuarios SET email = 'ana.nueva@email.com' WHERE id = ...;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DELETE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina registros de una tabla.</p>
+</td><td colspan="1" rowspan="1"><p><code>DELETE FROM usuarios WHERE id = ...;</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>Problemas Comunes en la Instalación</h2>
+<ul>
+<li><strong>Sistema:</strong> Necesidad de Linux moderno con suficiente RAM y espacio en disco.</li>
+<li><strong>Red:</strong> Puertos bloqueados o IPs mal configuradas.</li>
+<li><strong>Dependencias:</strong> Paquetes faltantes o mal instalados.</li>
+<li><strong><code>scylla.yaml</code></strong><strong>:</strong> Archivo de configuración principal mal escrito.</li>
+<li><strong>Permisos:</strong> Problemas de acceso a carpetas o archivos.</li>
+<li><strong>Conflictos de Puertos:</strong> Otros servicios usando los mismos puertos.</li>
+</ul>
+<h2 is-upgraded>Compatibilidad</h2>
+<ul>
+<li><strong>Optimizado para Linux:</strong> Especialmente Ubuntu.</li>
+<li><strong>Windows:</strong> Recomendado usar <strong>Docker</strong> para ejecutarlo.</li>
+</ul>
+<h2 is-upgraded>Demostración Práctica</h2>
+<h3 is-upgraded>1. Crear configuración de Docker Compose</h3>
+<pre><code language="language-yaml" class="language-yaml">version: &#39;3&#39;
+services:
+  scylla-node1:
+    image: scylladb/scylla
+    ports:
+      - &#34;9042:9042&#34;
+    volumes:
+      - scylla-data1:/var/lib/scylla
+    command: --seeds=scylla-node1
+
+volumes:
+  scylla-data1:
+</code></pre>
+<h3 is-upgraded>2. Crear estructura de datos</h3>
+<pre><code language="language-sql" class="language-sql">CREATE KEYSPACE tienda WITH replication = {
+  &#39;class&#39;: &#39;SimpleStrategy&#39;,
+  &#39;replication_factor&#39;: 1
+};
+USE tienda;
+
+CREATE TABLE productos (
+  id UUID PRIMARY KEY,
+  nombre TEXT,
+  precio DECIMAL,
+  stock INT,
+  categoria TEXT
+);
+
+CREATE INDEX idx_categoria ON productos (categoria);
+</code></pre>
+<h3 is-upgraded>3. Operaciones básicas con datos</h3>
+<pre><code language="language-sql" class="language-sql">-- Insertar producto
+INSERT INTO productos (id, nombre, precio, stock, categoria)
+VALUES (uuid(), &#39;Laptop Pro&#39;, 1299.99, 50, &#39;Electrónicos&#39;);
+
+-- Consultar productos
+SELECT * FROM productos;
+
+-- Filtrar por categoría
+SELECT * FROM productos WHERE categoria = &#39;Electrónicos&#39;;
+
+-- Actualizar stock
+UPDATE productos SET stock = stock - 1 WHERE id = [ID_PRODUCTO];
+
+-- Eliminar producto
+DELETE FROM productos WHERE id = [ID_PRODUCTO];
+</code></pre>
+<h3 is-upgraded>4. Rendimiento y monitoreo</h3>
+<pre><code language="language-sql" class="language-sql">-- Activar rastreo para analizar rendimiento
+TRACING ON;
+SELECT * FROM productos WHERE categoria = &#39;Electrónicos&#39;;
+TRACING OFF;
+
+-- Ver estado del sistema
+DESCRIBE KEYSPACES;
+DESCRIBE TABLES;
+
+-- Estadísticas del sistema
+nodetool status
+nodetool tablestats tienda.productos
+</code></pre>
 
 
       </google-codelab-step>
