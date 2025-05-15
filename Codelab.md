@@ -339,6 +339,91 @@ Texto plano en una lista con viñetas:
 ## Microsoft Azure
 Duration: 0:03:00
 
+# Microsoft Azure Table Storage
+
+---
+
+### Características Técnicas
+
+* **Modelo NoSQL basado en tablas:** Estructura de almacenamiento tipo key-value con propiedades personalizables.
+* **Escalabilidad automática:** Capacidad para manejar grandes volúmenes de datos sin configuración adicional.
+* **Alta disponibilidad y durabilidad:** Garantizado por la infraestructura de Azure.
+* **Acceso a través de REST API y SDKs:** Compatible con .NET, Java, Python, Node.js, etc.
+* **Costo-efectivo:** Pago por uso y almacenamiento, ideal para datos semiestructurados.
+
+---
+
+### Adopción y Casos de Uso
+
+* **Microsoft Services:** Almacén de telemetría y eventos.
+![Microsoft](assets/Microsoft.png)
+* **IoT Solutions:** Almacenamiento de datos de sensores.
+![IoT](assets/IoT.png)
+* **Aplicaciones Web:** Guardado de perfiles de usuarios y sesiones.
+![WebApp](assets/WebApp.png)
+* **Gaming Backends:** Datos de jugadores, puntuaciones y configuraciones.
+![Gaming](assets/Gaming.png)
+* **Logs y Auditorías:** Eventos de sistemas distribuidos.
+![Logs](assets/Logs.png)
+
+---
+
+### Operaciones Básicas en Table Storage (REST o SDK)
+
+| Operación | Descripción | Ejemplo SDK (.NET) |
+|----------|-------------|---------------------|
+| Insert   | Agrega una nueva entidad | `await tableClient.AddEntityAsync(entidad);` |
+| Retrieve | Obtiene una entidad por clave | `await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");` |
+| Update   | Modifica una entidad existente | `await tableClient.UpdateEntityAsync(entidad, ETag.All);` |
+| Delete   | Elimina una entidad | `await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");` |
+| Query    | Busca múltiples entidades | `tableClient.QueryAsync<T>(f => f.Prop == "valor");` |
+
+---
+
+### Problemas Comunes en la Configuración
+
+* **Falta de conexión al Storage Account.**
+* **Errores de autenticación con claves mal configuradas.**
+* **Acceso desde SDKs sin roles o permisos asignados.**
+* **Restricciones de red en cuentas de almacenamiento.**
+* **Formatos incorrectos en PartitionKey o RowKey.**
+
+---
+
+### Compatibilidad
+
+* **Lenguajes Soportados:**
+  * .NET (C#), Python, Java, Node.js, Go.
+* **Acceso multiplataforma:** Usable desde Windows, Linux o MacOS.
+* **Integración nativa con otros servicios de Azure (Functions, Logic Apps, Event Grid).**
+
+---
+
+### Demostración Práctica
+
+#### 1. Configurar acceso al servicio
+
+```csharp
+var serviceClient = new TableServiceClient("<Connection_String>");
+var tableClient = serviceClient.GetTableClient("clientes");
+await tableClient.CreateIfNotExistsAsync();
+
+var cliente = new TableEntity("LATAM", "cliente001")
+{
+    { "Nombre", "Carlos" },
+    { "Correo", "carlos@email.com" },
+    { "Edad", 32 }
+};
+await tableClient.AddEntityAsync(cliente);
+
+var entidad = await tableClient.GetEntityAsync<TableEntity>("LATAM", "cliente001");
+Console.WriteLine(entidad.Value["Nombre"]);
+
+entidad.Value["Edad"] = 33;
+await tableClient.UpdateEntityAsync(entidad, ETag.All);
+
+await tableClient.DeleteEntityAsync("LATAM", "cliente001");
+
 ### Cajas de información
 Texto plano.
 
