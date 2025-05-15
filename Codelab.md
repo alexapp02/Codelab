@@ -6,7 +6,7 @@ author: Tu Nombre
 categories: codelab,markdown
 environments: Web
 status: Published
-feedback link: https://github.com/tu_usuario/tu_repo/issues
+feedback link: https://github.com/alexapp02/Codelab.git
 analytics account: UA-XXXXXX-X
 
 # NO-SQL Orientado a Columnas
