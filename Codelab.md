@@ -507,18 +507,13 @@ await tableClient.DeleteEntityAsync("LATAM", "cliente001");
 ## 📘IBM Db2
 ![Imagen 1](assets/klipartz.com.png)
 
-En este paso, conocerás las características de IBM Db2 cuando trabaja en modo columnar usando su tecnología **BLU Acceleration**, ideal para cargas analíticas intensivas.
-
-### 🎯 Objetivo
-
-Comprender cómo IBM Db2 maneja datos en columnas, sus beneficios, limitaciones y ejemplos básicos de manipulación de datos usando SQL.
-
 ---
 
 ### 🔍 ¿Qué es IBM Db2 con BLU Acceleration?
 
 IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecnología **BLU Acceleration** permite procesar los datos de forma **columnar**, optimizando operaciones analíticas sobre grandes volúmenes de información.
 
+![Imagen 2](assets/Servidor IBM Db2 en detalle.png)
 ---
 
 ### 🧠 Características principales
@@ -559,7 +554,46 @@ IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecn
 - 🛍️ Evaluación de rendimiento de campañas de marketing digital.
 
 ---
+### Como descargar IMB Db2?
 
+IBM Db2 Community Edition es una versión gratuita y completa del motor Db2, ideal para estudiantes y desarrolladores que quieren explorar almacenamiento relacional y tecnologías como BLU Acceleration.
+
+---
+
+### 🧾 Requisitos previos
+
+Antes de comenzar, asegúrate de tener lo siguiente:
+
+- Un sistema operativo compatible (Windows 10/11, Linux, o macOS con virtualización).
+- Al menos **4 GB de RAM** (se recomienda 8 GB).
+- **Docker** instalado (opcional pero recomendado).
+- O bien, estar dispuesto a instalar Db2 directamente en tu sistema.
+
+---
+
+### 🅰️ Opción A: Instalación rápida con Docker (recomendada)
+
+La forma más rápida de probar Db2 sin configurar nada manualmente es usar **Docker**.
+
+#### 1. Instala Docker
+
+- Descarga Docker Desktop desde:  
+  👉 [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+
+- Instálalo y asegúrate de que Docker esté corriendo correctamente.
+
+#### 2. Ejecuta el contenedor de Db2
+
+Abre una terminal y ejecuta el siguiente comando:
+
+```bash
+docker run -itd --name db2 \
+  -e DB2INST1_PASSWORD=clave123 \
+  -e LICENSE=accept \
+  -p 50000:50000 \
+  ibmcom/db2
+
+```
 ### 🛠️ Ejemplos básicos con SQL
 
 ```sql
