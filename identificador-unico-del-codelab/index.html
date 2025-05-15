@@ -28,114 +28,251 @@
                   feedback-link="https://github.com/tu_usuario/tu_repo/issues">
     
       <google-codelab-step label="¿Qué es &#34;Orientado a Columnas&#34;?" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Añade una imagen</h2>
-<p>¡Añadiendo una imagen!</p>
-<p class="image-container"><img alt="Descripción de la imagen" src="img\\48b08f0e486ee39d.png"></p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+        <p>Las bases de datos orientadas a columnas son un tipo de almacenamiento NoSQL que organiza los datos por columnas en lugar de por filas, lo que ofrece ventajas significativas para ciertos casos de uso.</p>
+<h2 is-upgraded>Concepto fundamental</h2>
+<p>Almacena datos agrupados por columnas, en lugar de por filas como las bases de datos tradicionales. Esto permite:</p>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li>Lecturas y agregaciones de columnas muy rápidas, ideal para analítica</li>
+<li>Compresión eficiente de datos similares agrupados</li>
+<li>Acceso optimizado a subconjuntos específicos de datos</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<p>A veces se conoce como &#34;wide-column store&#34; o almacén de columnas anchas.</p>
+<h2 is-upgraded>Modelo de Datos</h2>
+<ul>
+<li><strong>Column Family</strong>: similar a tabla; agrupa columnas relacionadas</li>
+<li><strong>Row Key</strong>: clave única de cada fila</li>
+<li><strong>Columns</strong>: pares (nombre, valor, timestamp)</li>
+<li><strong>Super-columnas</strong> (opcional): agrupaciones de columnas anidadas</li>
+</ul>
+<p class="image-container"><img alt="Modelo de datos orientado a columnas" src="img\\f891959f79c43ab2.png"></p>
+<h2 is-upgraded>Casos de Uso</h2>
+<p>Las bases de datos orientadas a columnas son ideales para:</p>
+<ul>
+<li><strong>Análisis de clickstream y comportamiento web</strong>: Registro de eventos de usuarios (clics, páginas vistas, tiempo en página) con timestamps.</li>
+<li><strong>Telemetría de IoT a gran escala</strong>: Recogida continua de millones de métricas (temperatura, presión, humedad, posición GPS) desde dispositivos y sensores distribuidos.</li>
+<li><strong>Paneles de métricas y dashboards en tiempo real</strong>: Monitorización de KPIs (ventas por canal, visitas, tasa de conversión) con actualizaciones cada pocos segundos.</li>
+</ul>
+<h2 is-upgraded>Ventajas y Desventajas</h2>
+<h3 is-upgraded>Ventajas</h3>
+<ul>
+<li>Altas tasas de escritura y lectura de columnas específicas</li>
+<li>Excelente compresión y ahorro de espacio</li>
+<li>Escalado horizontal sencillo y alta disponibilidad</li>
+<li>Consistencia ajustable (tunable consistency)</li>
+</ul>
+<h3 is-upgraded>Desventajas</h3>
+<ul>
+<li>Consultas complejas no óptimas (no SQL JOIN)</li>
+<li>Carga incremental de datos puede ser subóptima</li>
+<li>Menor madurez de herramientas BI frente a RDBMS</li>
+<li>Curva de aprendizaje en diseño de esquema y tuning</li>
+</ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Apache Casandra" duration="5">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+        <p>Apache Cassandra es un sistema de gestión de bases de datos <strong>NoSQL</strong> distribuido y altamente escalable, diseñado para manejar grandes volúmenes de datos en múltiples servidores sin un único punto de fallo.​ Es ideal para aplicaciones que requieren características como: <strong>Alta disponibilidad</strong>, <strong>Alta velocidad de escritura</strong> y <strong>lectura, Escalabilidad horizontal</strong> (puedes añadir más columnas fácilmente).</p>
+<h2 is-upgraded>Historia de Apache Cassandra</h2>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li>En 2007 <strong>Facebook</strong> crea Cassandra para gestionar el motor de búsqueda de mensajes (<strong>Inbox Search</strong>), combinando lo mejor de <strong>Amazon Dynamo</strong> (<strong>alta disponibilidad</strong>) y Google Bigtable (<strong>modelo de datos flexible</strong>).</li>
+<li>En 2008 <strong>Facebook</strong> libera <strong>Cassandra</strong> como código abierto.</li>
+<li>En 2009 <strong>Cassandra</strong> se convierte en un proyecto de <strong>Apache Incubator</strong>. Poco después, se vuelve un proyecto de nivel superior dentro de la <strong>Apache Software Foundation</strong>.</li>
+<li>En 2010 Empresas como <strong>Twitter</strong>, <strong>Netflix</strong>, <strong>eBay</strong> y <strong>Apple</strong> comienzan a usar <strong>Cassandra</strong> para aplicaciones críticas.</li>
+<li>En 2020 – 2024 Se lanzan versiones más estables como 3.x, 4.x, con mejoras en rendimiento, seguridad y facilidad de operación.</li>
+<li>En la actualidad <strong>Cassandra</strong> es una de las bases de datos <strong>NoSQL</strong> más utilizadas en sistemas distribuidos, con una comunidad activa y soporte empresarial.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h2 is-upgraded>DDL de Apache Cassandra</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Comando DDL</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>CREATE KEYSPACE</p>
+</td><td colspan="1" rowspan="1"><p>Crea un nuevo keyspace (una base lógica para las tablas)​</p>
+</td><td colspan="1" rowspan="1"><p><code>CREATE KEYSPACE tienda WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};​</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DROP KEYSPACE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina un KEYSPACE.</p>
+</td><td colspan="1" rowspan="1"><p><code>DROP KEYSPACE tienda;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>CREATE TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Crea una nueva tabla con claves primarias definidas​</p>
+</td><td colspan="1" rowspan="1"><p><code>CREATE TABLE productos (id UUID PRIMARY KEY, nombre TEXT, precio DECIMAL);​</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ALTER TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Modifica una tabla existente (añadir columnas, por ejemplo)​.</p>
+</td><td colspan="1" rowspan="1"><p><code>ALTER TABLE productos ADD stock INT;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DROP TABLE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una tabla​</p>
+</td><td colspan="1" rowspan="1"><p><code>DROP TABLE productos;​</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>USE</p>
+</td><td colspan="1" rowspan="1"><p>Selecciona el keyspace activo.</p>
+</td><td colspan="1" rowspan="1"><p><code>USE tienda;</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>DML de Apache Cassandra</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Comando CQL</p>
+</td><td colspan="1" rowspan="1"><p>Descripción en Español</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>INSERT</p>
+</td><td colspan="1" rowspan="1"><p>Agrega nuevas filas o registros a las tablas</p>
+</td><td colspan="1" rowspan="1"><p><code>INSERT INTO productos (id, nombre, precio, stock) VALUES (uuid(), 'Laptop', 3500.00, 20);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>SELECT</p>
+</td><td colspan="1" rowspan="1"><p>Consulta datos​</p>
+</td><td colspan="1" rowspan="1"><p><code>SELECT * FROM productos;​</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>UPDATE</p>
+</td><td colspan="1" rowspan="1"><p>Modifica valores de una fila existente​.</p>
+</td><td colspan="1" rowspan="1"><p><code>UPDATE productos SET stock = 15 WHERE id = ...;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DELETE</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una fila o columna espécifica​</p>
+</td><td colspan="1" rowspan="1"><p><code>DELETE FROM productos WHERE id = ...;​</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>Instalacion de Apache Cassandra</h2>
+<h2 is-upgraded>JAVA11</h2>
+<ul>
+<li>Es necesario que se instale java 11 para poder usar cassandra​</li>
+</ul>
+<h2 is-upgraded>Variables de entorno​</h2>
+<ul>
+<li>Es necesario configurar java como variable de entorno para poder iniciarlizar cassandra​</li>
+</ul>
+<h2 is-upgraded>Otros lenguajes​</h2>
+<ul>
+<li>En necesario el lenguaje de programacion con le que se interactuará con la base de datos​</li>
+</ul>
+<h2 is-upgraded>Ejemplo en Apache Cassandra</h2>
+<h2 is-upgraded>Codificacion.</h2>
+<p class="image-container"><img alt="Descripción de la imagen" src="img\\7782ac9f9ca90300.png"></p>
+<h2 is-upgraded>Salida en Cassandra DB</h2>
+<p class="image-container"><img alt="Descripción de la imagen" src="img\\1705cbf809420989.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Microsoft Azure Cosmos DB" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+        <h2 is-upgraded>¿Qué es Azure Cosmos DB?</h2>
+<p><em>Azure Cosmos DB</em> es una base de datos distribuida globalmente y multimodelo ofrecida como servicio por Microsoft Azure. Diseñada para aplicaciones modernas, ofrece baja latencia, escalabilidad horizontal automática y alta disponibilidad en todo el mundo.</p>
+<h2 is-upgraded>COMPONENTES CLAVE DE COSMOS DB</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Componente</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Modelo multimodal</em></p>
+</td><td colspan="1" rowspan="1"><p>Soporte para varios modelos: documentos, clave-valor, grafo, columna ancha, tabla.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>APIs múltiples</em></p>
+</td><td colspan="1" rowspan="1"><p>Compatible con APIs como SQL (nativa), MongoDB, Cassandra, Gremlin (grafos) y Table.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Escalabilidad automática</em></p>
+</td><td colspan="1" rowspan="1"><p>Escala rendimiento (RU/s) y almacenamiento de forma elástica según demanda.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Particionamiento automático</em></p>
+</td><td colspan="1" rowspan="1"><p>Distribuye datos en particiones para escalar horizontalmente.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Replicación global</em></p>
+</td><td colspan="1" rowspan="1"><p>Replica datos en múltiples regiones con consistencia configurable.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Consistencia configurable</em></p>
+</td><td colspan="1" rowspan="1"><p>5 niveles de consistencia: fuerte, limitada, sesión, eventual, etc.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Integración con Azure</em></p>
+</td><td colspan="1" rowspan="1"><p>Se integra con servicios como Azure Functions, Logic Apps, Synapse Analytics.</p>
+</td></tr>
+</table>
+<h2 is-upgraded>DIFERENCIAS CLAVE CON CASSANDRA</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Función</p>
+</td><td colspan="1" rowspan="1"><p>Apache Cassandra</p>
+</td><td colspan="1" rowspan="1"><p>Azure Cosmos DB</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Modelo base</p>
+</td><td colspan="1" rowspan="1"><p>Distribuido, NoSQL</p>
+</td><td colspan="1" rowspan="1"><p>Distribuido, NoSQL multimodelo</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Búsqueda Full-Text</p>
+</td><td colspan="1" rowspan="1"><p>❌ No (requiere Solr)</p>
+</td><td colspan="1" rowspan="1"><p>⚠ Limitada (requiere Azure Cognitive Search u otro servicio)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Análisis en tiempo real</p>
+</td><td colspan="1" rowspan="1"><p>❌ No nativo</p>
+</td><td colspan="1" rowspan="1"><p>✅ Sí, mediante integración con Synapse o Spark</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Grafos</p>
+</td><td colspan="1" rowspan="1"><p>❌ No nativo</p>
+</td><td colspan="1" rowspan="1"><p>✅ Sí (API Gremlin)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Seguridad empresarial</p>
+</td><td colspan="1" rowspan="1"><p>Básica</p>
+</td><td colspan="1" rowspan="1"><p>✅ Avanzada (RBAC, cifrado, integración Azure AD)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Administración visual</p>
+</td><td colspan="1" rowspan="1"><p>❌ Limitada</p>
+</td><td colspan="1" rowspan="1"><p>✅ Sí (Portal Azure, Explorer, Monitor)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Soporte comercial</p>
+</td><td colspan="1" rowspan="1"><p>❌ Comunidad</p>
+</td><td colspan="1" rowspan="1"><p>✅ Oficial de Microsoft</p>
+</td></tr>
+</table>
+<h2 is-upgraded>¿Qué puedes hacer en un CodeLab con Azure Cosmos DB?</h2>
+<p>Dependiendo del laboratorio, puedes trabajar con:</p>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><em>SQL API</em> (para documentos tipo JSON y consultas tipo SQL)</li>
+<li><em>MongoDB API</em> (si quieres usar drivers Mongo)</li>
+<li><em>Gremlin API</em> (para grafos)</li>
+<li><em>Cassandra API</em> (para aplicaciones Cassandra existentes)</li>
+<li><em>Integración con Spark o Synapse</em> (para análisis avanzados)</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h3 is-upgraded>👨‍💻 Ejemplo: Crear una colección con índice y consulta SQL API</h3>
+<pre><code language="language-sql" class="language-sql">-- Crear una base de datos y una colección (en Azure Portal o CLI)
+
+-- Insertar documentos
+INSERT INTO productos (id, nombre, descripcion) VALUES
+(&#34;1&#34;, &#34;Laptop HP&#34;, &#34;Laptop con 16GB RAM y SSD&#34;),
+(&#34;2&#34;, &#34;Mouse Logitech&#34;, &#34;Mouse inalámbrico ergonómico&#34;);
+
+-- Consulta con filtro básico
+SELECT * FROM productos p WHERE CONTAINS(p.descripcion, &#34;laptop&#34;)
+</code></pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="APACHE HBASE" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
-<ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
-</ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
+        <h2 is-upgraded>Historia</h2>
+<p>Fue creada por apache software foundation, comenzó como un proyecto que pretendía responder a las necesidades de una empresa llamada Powerset, donde necesitaban una herramienta que pudiera procesar grandes cantidades de datos.Esta fue inspirada por Google por bigtable donde su principal propósito fue crear una base de datos distribuida, hbase ha evolucionado para gestionar el almacenamiento de datos a gran escala y el acceso en tiempo real.</p>
+<p>Esta esta creada por filas y columnas, donde sus columnas se agrupan en columnas de familia, esta puede almacenar los datos de forma separada y distribuida en multiples servidores ya que esta escribe datos en HDFS (Hadoop Distributed File System) en formatos de columnas, asi logrando optimizar el rendimiento de lectura y escritura, HDFS es el sistema de archivos distribuido en Hadoop, es como el dusco duro del cluster pero repartidos entre varias maquinas. Este se ejecuta en un framework llamado apache hadoop</p>
+<h2 is-upgraded>ventajas y desventajas</h2>
+<h3 is-upgraded>Ventajas</h3>
+<p>1.Puede contener grandes cantidades de datos repartidos en muchas computadoras, lo que facilita la recuperación de los datos si en algún momento alguna falla, porque todas las maquinas tienen copia de seguridad</p>
+<p>2.Esta puede tener millones de filas y columnas sin problema y aun así puede acceder fácilmente a sus datos rápidamente.</p>
+<p>3.Si en algún momento necesitas guardar más información, simplemente puedes agregar más computadoras al sistema, sin tener que cambiarlo todo.</p>
+<p>4.Si e necesitas guardar más información, simplemente puedes agregar más computadoras al sistema, sin tener que cambiarlo todo.</p>
+<h3 is-upgraded>Desventajas</h3>
+<p>1.configurarlo no es tan fácil, ya que se necesitan varias liberias y herramientas para que funcione adecuadamente.</p>
+<p>2.Puede sentirse aveces mas lento comparada con otras bases de datos NoSQL.</p>
+<h2 is-upgraded>DML Y EJEMPLOS</h2>
+<p class="image-container"><img alt="Descripción de la imagen" src="img\\6879d399cd8b4dbb.jpg"></p>
+<h2 is-upgraded>DDL Y EJEMPLOS</h2>
+<p class="image-container"><img alt="Descripción de la imagen" src="img\\eb21ee1143125cc3.jpg"></p>
+<h2 is-upgraded>Instalación y problemas de Apache Hbase</h2>
+<p>se debe tener presente que antes de descargar apache hadoop se debe instalar primero java en su versión 8 en adelante, tener también instalado previamente hadoop y asi descargar apache hbase con el siguiente link &#34;https://dlcdn.apache.org/hbase/3.0.0-beta-1/hbase-3.0.0-beta-1-src.tar.gz&#34;</p>
+<p>se debe tener en cuanto estos pasos: Extraer la carpeta, el el archivo llamdo ~/.bashrc, se escribe unos comandos en la terminal ​ *nano ~/.bashrc​ *export HADOOP_HOME=~/hadoop​ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin​ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop​ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</p>
+<p>algunos problemas de instalación</p>
 <ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
+<li>Asegurar bien si java esta bien configurada, si no puede fallar HBase</li>
+<li>Asegurar que hadoop este bien instalado y bien configurado, si no aparecerá error en HBase</li>
+<li>mal configuración de archivos.</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="DataStax Enterprise" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
-<ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
-</ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
 
 
       </google-codelab-step>
@@ -309,68 +446,305 @@ nodetool tablestats tienda.productos
 
       </google-codelab-step>
     
-      <google-codelab-step label="Google Cloud" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="Google Cloud Bigtable" duration="3">
+        <p><strong>Google Cloud Bigtable</strong> es un servicio de base de datos NoSQL distribuida, desarrollado por Google, que almacena datos en formato de columna. Está diseñado para manejar grandes volúmenes de datos de manera escalable, con baja latencia y alta disponibilidad.</p>
+<p>Bigtable utiliza un esquema de tipo clave-valor, pero con una estructura orientada por columnas. Esto significa que los datos se organizan en familias de columnas, lo que permite acceder a conjuntos de datos muy específicos de forma eficiente.</p>
+<h2 is-upgraded>Herramientas del ecosistema Google Cloud</h2>
+<p>Google Cloud Bigtable está basado en el modelo descrito por Google en un artículo técnico publicado en 2006. En él, se describe cómo Bigtable fue diseñado para manejar datos distribuidos a gran escala dentro de Google, con casos de uso como <strong>Google Search</strong>, <strong>Google Maps</strong> y <strong>Google Analytics</strong>.</p>
+<p>Bigtable se integra fácilmente con otras herramientas del ecosistema de Google Cloud. Por ejemplo, se puede usar junto con:</p>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Dataflow</strong>, para procesar flujos de datos en tiempo real.</li>
+<li><strong>Dataproc</strong>, para ejecutar cargas de trabajo tipo Hadoop o Spark.</li>
+<li>Y con <strong>AI Platform</strong>, para entrenar modelos de machine learning usando los datos almacenados en Bigtable.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
+<h2 is-upgraded>Ventajas de Bigtable:</h2>
 <ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
+<li><strong>Alta escalabilidad:</strong> Puede manejar petabytes de datos sin perder rendimiento.</li>
+<li><strong>Baja latencia:</strong> Permite acceder a los datos rápidamente, incluso bajo grandes volúmenes.</li>
+<li><strong>Alta disponibilidad:</strong> Diseñado para operar sin interrupciones, incluso si hay fallas en servidores o regiones.</li>
+<li><strong>Integración con el ecosistema de Google Cloud:</strong> Se complementa con herramientas de análisis, inteligencia artificial y procesamiento de datos en la nube.</li>
+<li><strong>Modelo flexible:</strong> No requiere una estructura fija, lo que permite almacenar diferentes tipos de datos sin necesidad de redefinir el esquema.</li>
+<li><strong>Consistencia fuerte por fila:</strong> Las operaciones sobre una fila son atómicas y consistentes.</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h2 is-upgraded>Casos de uso</h2>
+<ul>
+<li><strong>Análisis de series temporales:</strong> Como métricas de sensores, datos de IoT o monitoreo de rendimiento (ej: Stackdriver Monitoring de Google).</li>
+<li><strong>Personalización y recomendación:</strong> Bases de datos de perfiles de usuarios y actividades para sugerencias personalizadas.</li>
+<li><strong>Procesamiento de datos a gran escala:</strong> Almacenamiento de logs o información estructurada que se analiza con herramientas como Apache Beam o Dataflow.</li>
+<li><strong>Machine Learning:</strong> Almacenamiento de datasets grandes y estructurados para modelos de aprendizaje automático.</li>
+<li><strong>Gaming:</strong> Registro de eventos, puntuaciones y actividades de jugadores en tiempo real.</li>
+</ul>
+<h2 is-upgraded>Comandos en Bigtable</h2>
+<h3 is-upgraded>Tablas:</h3>
+<ul>
+<li><strong>Creación de tablas:</strong></li>
+</ul>
+<p><img alt="Comando1" src="img\\93e622062cce0059.png"> Estamos creando una tabla llamada &#34;my-table&#34;.</p>
+<ul>
+<li><strong>Consultar tus tablas:</strong></li>
+</ul>
+<p><img alt="Comando2" src="img\\c97213adb3514469.png"> Podemos generar una lista con todas las tablas generadas.</p>
+<ul>
+<li><strong>Agregar una familia de columnas:</strong></li>
+</ul>
+<p><img alt="Comando3" src="img\\f3de9638cc938c2f.png"> Aquí le estamos agregando a la tabla &#34;my-table&#34; una familia de columnas llamadas &#34;cf1&#34;.</p>
+<ul>
+<li><strong>Consultar tus familias de columnas</strong></li>
+</ul>
+<p><img alt="Comando4" src="img\\d222ffff9286427f.png"> Con este comando podemos listar las familias de columnas que existen en la tabla &#34;my-table&#34;.</p>
+<ul>
+<li><strong>Eliminar una tabla:</strong></li>
+</ul>
+<p><img alt="Comando5" src="img\\115d6144ab79c22b.png"> Y asi podríamos eliminar la tabla &#34;my-table&#34;.</p>
+<h3 is-upgraded>Registros:</h3>
+<ul>
+<li><strong>Agregar valores a una tabla:</strong></li>
+</ul>
+<p><img alt="Comando6" src="img\\10bad335d7dc0c11.png"> Aquí estamos escribiendo 2 valores de prueba en una fila especifica dentro de la tabla, donde &#34;my-table&#34; es la tabla donde se van a guardar, r1 es el identificador de la fila, cf1 es el nombre de la familia de columnas y c1 es el es el nombre de un campo dentro de la familia.</p>
+<ul>
+<li><strong>Leer los valores agregados a una tabla:</strong></li>
+</ul>
+<p><img alt="Comando7" src="img\\842b765ee34cc9c4.png"> Con este comando podemos hacer que lea todos los datos que se han agregado a la tabla &#34;my-table&#34;.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Microsoft Azure" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="Microsoft Azure" duration="0">
+        <p><strong>Duración:</strong> 0:03:00</p>
+<h2 is-upgraded>🧊 Cajas de información</h2>
+<p><strong>Microsoft Azure Table Storage</strong></p>
+<h2 is-upgraded>⚙️ Características Técnicas</h2>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Modelo NoSQL basado en tablas:</strong> Estructura de almacenamiento tipo key-value con propiedades personalizables.</li>
+<li><strong>Escalabilidad automática:</strong> Capacidad para manejar grandes volúmenes de datos sin configuración adicional.</li>
+<li><strong>Alta disponibilidad y durabilidad:</strong> Garantizado por la infraestructura de Azure.</li>
+<li><strong>Acceso a través de REST API y SDKs:</strong> Compatible con .NET, Java, Python, Node.js, etc.</li>
+<li><strong>Costo-efectivo:</strong> Pago por uso y almacenamiento, ideal para datos semiestructurados.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h2 is-upgraded>🚀 Adopción y Casos de Uso</h2>
+<ul>
+<li><strong>Microsoft Services:</strong> Almacén de telemetría y eventos.<br><img alt="Microsoft" src="img\\30206268157304f6.png"></li>
+<li><strong>IoT Solutions:</strong> Almacenamiento de datos de sensores.<br><img alt="IoT" src="img\\1502b10f0f5137dc.png"></li>
+<li><strong>Aplicaciones Web:</strong> Guardado de perfiles de usuarios y sesiones.<br><img alt="WebApp" src="img\\3114a2e09dd2e4c3.png"></li>
+<li><strong>Gaming Backends:</strong> Datos de jugadores, puntuaciones y configuraciones.<br><img alt="Gaming" src="img\\d5dd72c17701859.png"></li>
+<li><strong>Logs y Auditorías:</strong> Eventos de sistemas distribuidos.<br><img alt="Logs" src="img\\bd9edad8a071a366.png"></li>
+</ul>
+<h2 is-upgraded>🧪 Operaciones Básicas en Table Storage (REST o SDK)</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Operación</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo SDK (.NET)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Insert</p>
+</td><td colspan="1" rowspan="1"><p>Agrega una nueva entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.AddEntityAsync(entidad);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Retrieve</p>
+</td><td colspan="1" rowspan="1"><p>Obtiene una entidad por clave</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Update</p>
+</td><td colspan="1" rowspan="1"><p>Modifica una entidad existente</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.UpdateEntityAsync(entidad, ETag.All);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Delete</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Query</p>
+</td><td colspan="1" rowspan="1"><p>Busca múltiples entidades</p>
+</td><td colspan="1" rowspan="1"><p><code>tableClient.QueryAsync<T>(f => f.Prop == "valor");</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>❗ Problemas Comunes en la Configuración</h2>
+<ul>
+<li>Falta de conexión al Storage Account.</li>
+<li>Errores de autenticación con claves mal configuradas.</li>
+<li>Acceso desde SDKs sin roles o permisos asignados.</li>
+<li>Restricciones de red en cuentas de almacenamiento.</li>
+<li>Formatos incorrectos en <code>PartitionKey</code> o <code>RowKey</code>.</li>
+</ul>
+<h2 is-upgraded>💻 Compatibilidad</h2>
+<ul>
+<li><strong>Lenguajes Soportados:</strong><ul>
+<li>.NET (C#), Python, Java, Node.js, Go</li>
+</ul>
+</li>
+<li><strong>Acceso multiplataforma:</strong><ul>
+<li>Usable desde Windows, Linux o macOS</li>
+</ul>
+</li>
+<li><strong>Integración nativa con servicios de Azure:</strong><ul>
+<li>Azure Functions, Logic Apps, Event Grid</li>
+</ul>
+</li>
+</ul>
+<h2 is-upgraded>🔧 Demostración Práctica</h2>
+<h3 is-upgraded>Paso a paso en .NET</h3>
+<pre><code language="language-csharp" class="language-csharp">var serviceClient = new TableServiceClient(&#34;&lt;Connection_String&gt;&#34;);
+var tableClient = serviceClient.GetTableClient(&#34;clientes&#34;);
+await tableClient.CreateIfNotExistsAsync();
+
+var cliente = new TableEntity(&#34;LATAM&#34;, &#34;cliente001&#34;)
+{
+    { &#34;Nombre&#34;, &#34;Carlos&#34; },
+    { &#34;Correo&#34;, &#34;carlos@email.com&#34; },
+    { &#34;Edad&#34;, 32 }
+};
+await tableClient.AddEntityAsync(cliente);
+
+var entidad = await tableClient.GetEntityAsync&lt;TableEntity&gt;(&#34;LATAM&#34;, &#34;cliente001&#34;);
+Console.WriteLine(entidad.Value[&#34;Nombre&#34;]);
+
+entidad.Value[&#34;Edad&#34;] = 33;
+await tableClient.UpdateEntityAsync(entidad, ETag.All);
+
+await tableClient.DeleteEntityAsync(&#34;LATAM&#34;, &#34;cliente001&#34;);
+
+</code></pre>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="IBM Db2" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="IBM Db2" duration="0">
+        <p class="image-container"><img alt="Imagen 1" src="img\\c40926adc8a83605.png"></p>
+<h2 is-upgraded>🔍 ¿Qué es IBM Db2 con BLU Acceleration?</h2>
+<p>IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecnología <strong>BLU Acceleration</strong> permite procesar los datos de forma <strong>columnar</strong>, optimizando operaciones analíticas sobre grandes volúmenes de información.</p>
+<h2 is-upgraded>🧠 Características principales</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Característica</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Almacenamiento columnar</p>
+</td><td colspan="1" rowspan="1"><p>Los datos se almacenan y procesan por columnas, lo cual mejora la eficiencia de lectura en consultas.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Compresión avanzada</p>
+</td><td colspan="1" rowspan="1"><p>BLU aplica técnicas de compresión para reducir espacio en disco y acelerar el acceso a datos.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Procesamiento en memoria</p>
+</td><td colspan="1" rowspan="1"><p>Optimiza el uso de la RAM priorizando columnas frecuentemente consultadas.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Eliminación de índices</p>
+</td><td colspan="1" rowspan="1"><p>No necesita índices ni agregaciones predefinidas, ya que escanea columnas rápidamente.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Compatibilidad SQL</p>
+</td><td colspan="1" rowspan="1"><p>Utiliza sintaxis SQL estándar, facilitando su uso con herramientas existentes.</p>
+</td></tr>
+</table>
+<h2 is-upgraded>✅ Ventajas</h2>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li>🚀 Alto rendimiento en cargas analíticas (OLAP).</li>
+<li>📉 Menor consumo de almacenamiento gracias a la compresión.</li>
+<li>🧩 Compatible con herramientas de BI y ecosistemas de datos.</li>
+<li>🔧 Menor intervención del DBA para optimización.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
+<h2 is-upgraded>⚠️ Desventajas</h2>
+<ul>
+<li>❌ No está optimizado para cargas transaccionales (OLTP).</li>
+<li>💰 Puede requerir licencias costosas y hardware potente.</li>
+<li>🔄 No todos los tipos de carga de trabajo se benefician de BLU.</li>
+</ul>
+<h2 is-upgraded>💼 Casos de uso recomendados</h2>
+<ul>
+<li>📊 Análisis de ventas históricas.</li>
+<li>🏥 Inteligencia de negocios en sector salud.</li>
+<li>🏦 Análisis de riesgo financiero.</li>
+<li>📈 Reporting casi en tiempo real con dashboards.</li>
+<li>🛍️ Evaluación de rendimiento de campañas de marketing digital.</li>
+</ul>
+<h2 is-upgraded>Como descargar IMB Db2?</h2>
+<p>IBM Db2 Community Edition es una versión gratuita y completa del motor Db2, ideal para estudiantes y desarrolladores que quieren explorar almacenamiento relacional y tecnologías como BLU Acceleration.</p>
+<h2 is-upgraded>🧾 Requisitos previos</h2>
+<p>Antes de comenzar, asegúrate de tener lo siguiente:</p>
+<ul>
+<li>Un sistema operativo compatible (Windows 10/11, Linux, o macOS con virtualización).</li>
+<li>Al menos <strong>4 GB de RAM</strong> (se recomienda 8 GB).</li>
+<li><strong>Docker</strong> instalado (opcional pero recomendado).</li>
+<li>O bien, estar dispuesto a instalar Db2 directamente en tu sistema.</li>
+</ul>
+<h2 is-upgraded>🅰️ Opción A: Instalación rápida con Docker (recomendada)</h2>
+<p>La forma más rápida de probar Db2 sin configurar nada manualmente es usar <strong>Docker</strong>.</p>
+<h3 is-upgraded>1. Instala Docker</h3>
+<ul>
+<li>Descarga Docker Desktop desde:<br> 👉 <a href="https://www.docker.com/products/docker-desktop" target="_blank">https://www.docker.com/products/docker-desktop</a></li>
+<li>Instálalo y asegúrate de que Docker esté corriendo correctamente.</li>
+</ul>
+<h3 is-upgraded>2. Ejecuta el contenedor de Db2</h3>
+<p>Abre una terminal y ejecuta el siguiente comando:</p>
+<pre><code language="language-bash" class="language-bash">docker run -itd --name db2 \
+  -e DB2INST1_PASSWORD=clave123 \
+  -e LICENSE=accept \
+  -p 50000:50000 \
+  ibmcom/db2
+
+</code></pre>
+<p>Esto hace lo siguiente:</p>
+<ul>
+<li>Crea un contenedor con Db2.</li>
+<li>Asigna la contraseña del usuario principal.</li>
+<li>Expone el puerto 50000 para conexiones externas.</li>
+</ul>
+<p>Para verificar si esta corriendo</p>
+<pre><code language="language-bash" class="language-bash">docker logs -f db2
+</code></pre>
+<p>Y por ultiimo la conexin la haces por medio de  herramientas como DBeaver, IBM Data Studio o desde línea de comandos con el cliente db2cli</p>
+<pre><code language="language-bash" class="language-bash">Host: localhost
+Puerto: 50000
+Usuario: db2inst1
+Contraseña: clave123
+</code></pre>
+<h2 is-upgraded>🅱️ Opción B: Instalación manual de IBM Db2 Community Edition en Windows o Linux</h2>
+<p>Si no deseas usar Docker, puedes instalar Db2 directamente en tu sistema operativo. Este método te permite tener más control sobre la instalación y configuración.</p>
+<h3 is-upgraded>📥 Paso 1: Ir al sitio oficial</h3>
 <ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
+<li>Visita el sitio oficial de IBM Db2:<br> 👉 <a href="https://www.ibm.com/products/db2" target="_blank">https://www.ibm.com/products/db2</a></li>
+<li>Haz clic en <strong>&#34;Try free&#34;</strong> o &#34;Download Community Edition&#34;.</li>
+<li>Regístrate con una cuenta IBM (gratuita) si aún no tienes una.</li>
+<li>Elige tu sistema operativo (Windows o Linux) y descarga el instalador correspondiente:</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<ul>
+<li>Para Windows: <code>db2setup.exe</code></li>
+<li>Para Linux: <code>.tar.gz</code></li>
+</ul>
+<h3 is-upgraded>🪟 Instalación en Windows</h3>
+<h4 is-upgraded>📁 Paso 2: Ejecutar el instalador</h4>
+<ol type="1">
+<li>Ubica el archivo <code>db2setup.exe</code> descargado.</li>
+<li>Haz clic derecho y selecciona <strong>&#34;Ejecutar como administrador&#34;</strong>.</li>
+<li>Sigue los pasos del asistente:<ul>
+<li>Elige &#34;Instalación típica&#34;.</li>
+<li>Crea un nuevo usuario de sistema (ejemplo: <code>db2admin</code>).</li>
+<li>Establece una contraseña para este usuario.</li>
+<li>Finaliza la instalación.</li>
+</ul>
+</li>
+</ol>
+<h4 is-upgraded>✅ Paso 3: Verificar que Db2 funciona</h4>
+<ol type="1">
+<li>Abre el <strong>Db2 Command Line Processor</strong> como administrador.</li>
+<li>Ejecuta los siguientes comandos:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">db2start
+db2 create db testdb
+db2 connect to testdb
+</code></pre>
+<h3 is-upgraded>🛠️ Ejemplos básicos con SQL</h3>
+<pre><code language="language-sql" class="language-sql">-- Selección de columnas
+SELECT nombre, apellido FROM empleados WHERE salario &gt; 5000;
+
+-- Inserción de un nuevo registro
+INSERT INTO empleados (id, nombre, apellido, salario) 
+VALUES (1, &#39;Juan&#39;, &#39;Pérez&#39;, 6000);
+
+-- Actualización de salarios
+UPDATE empleados 
+SET salario = salario * 1.05 
+WHERE departamento = &#39;Ventas&#39;;
+
+-- Eliminación de registros
+DELETE FROM empleados 
+WHERE salario &lt; 2000;
+</code></pre>
 
 
       </google-codelab-step>
