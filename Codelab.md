@@ -148,26 +148,59 @@ Texto plano en una lista con viñetas:
 ¡Ya tienes tu lista numerada creada!
 
 ## DataStax Enterprise 
-Duration: 0:03:00
+¿Qué es DataStax Enterprise (DSE)?
+DataStax Enterprise es una plataforma de datos distribuida que amplía Apache Cassandra con características empresariales avanzadas. Es más poderosa y flexible que usar solo Cassandra.
 
-### Cajas de información
-Texto plano.
+🧩 COMPONENTES CLAVE DE DSE
+Componente	Descripción
+⚙️ DSE Core	Motor de base de datos distribuida basado en Apache Cassandra.
+🔍 DSE Search	Búsqueda avanzada tipo full-text usando Apache Solr.
+🧠 DSE Analytics	Integración con Apache Spark para análisis distribuidos.
+🌐 DSE Graph	Base de datos de grafos escalable para relaciones complejas.
+🔒 Seguridad Empresarial	Autenticación, autorización, cifrado, auditoría avanzada.
+🛠️ DSE Studio	Interfaz visual para trabajar con datos, CQL, Spark y Graph.
+📈 DSE OpsCenter	Herramienta de monitoreo y administración visual del clúster.
 
-### Lista con viñetas
-Texto plano en una lista con viñetas:
+✅ DIFERENCIAS CLAVE CON CASSANDRA
+Función	Apache Cassandra	DataStax Enterprise (DSE)
+Modelo base	Distribuido, NoSQL	Distribuido, NoSQL
+Búsqueda Full-Text	❌ No	✅ Sí (DSE Search con Solr)
+Análisis en tiempo real	❌ No	✅ Sí (DSE Analytics con Spark)
+Grafos	❌ No	✅ Sí (DSE Graph)
+Seguridad empresarial	Básica	Avanzada (LDAP, Kerberos, cifrado)
+Administración visual	❌ No	✅ Sí (DSE OpsCenter)
+Soporte comercial	❌ Comunidad	✅ Oficial de DataStax
 
-* Hola
-* CodeLab
-* Mundo
+🧪 ¿Qué puedes hacer en un CodeLab de DataStax con DSE?
+Dependiendo del laboratorio, puedes interactuar con:
 
-¡Ya tienes tu lista con viñetas creada!
+CQL (para tablas y consultas básicas)
 
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
+DSE Graph (con Gremlin para grafos)
 
-¡Ya tienes tu lista numerada creada!
+DSE Search (consultas full-text)
+
+Spark SQL (para análisis si está habilitado)
+
+REST/GraphQL APIs (si hay endpoints activos)
+
+📝 Ejemplo de código DSE Search (si está habilitado)
+sql
+Copiar
+Editar
+-- Crear una tabla con índices de búsqueda
+CREATE TABLE productos (
+  id UUID PRIMARY KEY,
+  nombre TEXT,
+  descripcion TEXT
+);
+
+-- Crear índice de búsqueda full-text
+CREATE CUSTOM INDEX ON productos (descripcion)
+USING 'com.datastax.bdp.search.solr.Cql3SolrIndex';
+
+-- Luego puedes hacer búsquedas como:
+SELECT * FROM productos WHERE solr_query = '{"q":"descripcion:laptop"}';
 
 ## ScyllaDB 
 Duration: 0:03:00
