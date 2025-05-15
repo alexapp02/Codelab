@@ -33,7 +33,7 @@
 <h2 is-upgraded>Añade una imagen</h2>
 <p>¡Añadiendo una imagen!</p>
 <p class="image-container"><img alt="Descripción de la imagen" src="img\\48b08f0e486ee39d.png"></p>
-<h2 is-upgraded>Lista con viñetas</h2>
+<h2 is-upgraded>Lista con viñetas (IBM Db2)</h2>
 <p>Texto plano en una lista con viñetas:</p>
 <ul>
 <li>Hola</li>
@@ -440,6 +440,7 @@ nodetool tablestats tienda.productos
       <google-codelab-step label="Microsoft Azure" duration="0">
         <p><strong>Duración:</strong> 0:03:00</p>
 <h2 is-upgraded>🧊 Cajas de información</h2>
+<<<<<<< HEAD
 <p><strong>Microsoft Azure Table Storage</strong></p>
 <h2 is-upgraded>⚙️ Características Técnicas</h2>
 <ul>
@@ -531,11 +532,18 @@ await tableClient.DeleteEntityAsync(&#34;LATAM&#34;, &#34;cliente001&#34;);
 </code></pre>
 <h2 is-upgraded>📋 Listas</h2>
 <h3 is-upgraded>Lista con viñetas:</h3>
+=======
+<h2 is-upgraded>Microsoft Azure Table Storage</h2>
+<h2 is-upgraded>⚙️ Características Técnicas</h2>
+>>>>>>> 713f879a3e9b7f0f505caebc28abdf5b8a754b27
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Modelo NoSQL basado en tablas:</strong> Estructura de almacenamiento tipo key-value con propiedades personalizables.</li>
+<li><strong>Escalabilidad automática:</strong> Capacidad para manejar grandes volúmenes de datos sin configuración adicional.</li>
+<li><strong>Alta disponibilidad y durabilidad:</strong> Garantizado por la infraestructura de Azure.</li>
+<li><strong>Acceso a través de REST API y SDKs:</strong> Compatible con .NET, Java, Python, Node.js, etc.</li>
+<li><strong>Costo-efectivo:</strong> Pago por uso y almacenamiento, ideal para datos semiestructurados.</li>
 </ul>
+<<<<<<< HEAD
 <h3 is-upgraded>Lista numerada:</h3>
 <ol type="1">
 <li>Lista</li>
@@ -551,19 +559,110 @@ await tableClient.DeleteEntityAsync(&#34;LATAM&#34;, &#34;cliente001&#34;);
 <p>Texto plano.</p>
 <h2 is-upgraded>Lista con viñetas</h2>
 <p>Texto plano en una lista con viñetas:</p>
+=======
+<h2 is-upgraded>🚀 Adopción y Casos de Uso</h2>
+>>>>>>> 713f879a3e9b7f0f505caebc28abdf5b8a754b27
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Microsoft Services:</strong> Almacén de telemetría y eventos.<br><img alt="Microsoft" src="img\\30206268157304f6.png"></li>
+<li><strong>IoT Solutions:</strong> Almacenamiento de datos de sensores.<br><img alt="IoT" src="img\\1502b10f0f5137dc.png"></li>
+<li><strong>Aplicaciones Web:</strong> Guardado de perfiles de usuarios y sesiones.<br><img alt="WebApp" src="img\\3114a2e09dd2e4c3.png"></li>
+<li><strong>Gaming Backends:</strong> Datos de jugadores, puntuaciones y configuraciones.<br><img alt="Gaming" src="img\\d5dd72c17701859.png"></li>
+<li><strong>Logs y Auditorías:</strong> Eventos de sistemas distribuidos.<br><img alt="Logs" src="img\\bd9edad8a071a366.png"></li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h2 is-upgraded>🧪 Operaciones Básicas en Table Storage (REST o SDK)</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Operación</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo SDK (.NET)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Insert</p>
+</td><td colspan="1" rowspan="1"><p>Agrega una nueva entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.AddEntityAsync(entidad);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Retrieve</p>
+</td><td colspan="1" rowspan="1"><p>Obtiene una entidad por clave</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Update</p>
+</td><td colspan="1" rowspan="1"><p>Modifica una entidad existente</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.UpdateEntityAsync(entidad, ETag.All);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Delete</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Query</p>
+</td><td colspan="1" rowspan="1"><p>Busca múltiples entidades</p>
+</td><td colspan="1" rowspan="1"><p><code>tableClient.QueryAsync<T>(f => f.Prop == "valor");</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>❗ Problemas Comunes en la Configuración</h2>
+<ul>
+<li>Falta de conexión al Storage Account.</li>
+<li>Errores de autenticación con claves mal configuradas.</li>
+<li>Acceso desde SDKs sin roles o permisos asignados.</li>
+<li>Restricciones de red en cuentas de almacenamiento.</li>
+<li>Formatos incorrectos en <code>PartitionKey</code> o <code>RowKey</code>.</li>
+</ul>
+<h2 is-upgraded>💻 Compatibilidad</h2>
+<ul>
+<li><strong>Lenguajes Soportados:</strong><ul>
+<li>.NET (C#), Python, Java, Node.js, Go</li>
+</ul>
+</li>
+<li><strong>Acceso multiplataforma:</strong><ul>
+<li>Usable desde Windows, Linux o macOS</li>
+</ul>
+</li>
+<li><strong>Integración nativa con servicios de Azure:</strong><ul>
+<li>Azure Functions, Logic Apps, Event Grid</li>
+</ul>
+</li>
+</ul>
+<h2 is-upgraded>🔧 Demostración Práctica</h2>
+<h3 is-upgraded>Paso a paso en .NET</h3>
+<pre><code language="language-csharp" class="language-csharp">var serviceClient = new TableServiceClient(&#34;&lt;Connection_String&gt;&#34;);
+var tableClient = serviceClient.GetTableClient(&#34;clientes&#34;);
+await tableClient.CreateIfNotExistsAsync();
+
+var cliente = new TableEntity(&#34;LATAM&#34;, &#34;cliente001&#34;)
+{
+    { &#34;Nombre&#34;, &#34;Carlos&#34; },
+    { &#34;Correo&#34;, &#34;carlos@email.com&#34; },
+    { &#34;Edad&#34;, 32 }
+};
+await tableClient.AddEntityAsync(cliente);
+
+var entidad = await tableClient.GetEntityAsync&lt;TableEntity&gt;(&#34;LATAM&#34;, &#34;cliente001&#34;);
+Console.WriteLine(entidad.Value[&#34;Nombre&#34;]);
+
+entidad.Value[&#34;Edad&#34;] = 33;
+await tableClient.UpdateEntityAsync(entidad, ETag.All);
+
+await tableClient.DeleteEntityAsync(&#34;LATAM&#34;, &#34;cliente001&#34;);
+
+## IBM Db2
+
+Duration: 0:03:00
+
+### Cajas de información
+Texto plano.
+
+### Lista con viñetas
+Texto plano en una lista con viñetas:
+
+* Hola
+* CodeLab
+* Mundo
+
+¡Ya tienes tu lista con viñetas creada!
+
+### Lista numerada
+1. Lista
+2. Utilizando
+3. Números
+
+¡Ya tienes tu lista numerada creada!</code></pre>
 
 
       </google-codelab-step>

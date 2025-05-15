@@ -12,7 +12,7 @@ analytics account: UA-XXXXXX-X
 # NO-SQL Orientado a Columnas
 
 ## ¿Qué es "Orientado a Columnas"?
-Duration: 0:03:00 
+Duration: 0:03:00
 
 ### Cajas de información
 Texto plano.
@@ -23,7 +23,7 @@ Texto plano.
 ![Descripción de la imagen](assets/prueba.png)
 
 
-### Lista con viñetas
+### Lista con viñetas (IBM Db2)
 Texto plano en una lista con viñetas:
 
 * Hola
@@ -387,15 +387,19 @@ Bigtable se integra fácilmente con otras herramientas del ecosistema de Google 
 ![Comando7](assets/leerValores.png)
   Con este comando podemos hacer que lea todos los datos que se han agregado a la tabla “my-table”.
 
-
 ## Microsoft Azure  
+
 **Duración:** 0:03:00
 
 ---
 
 ### 🧊 Cajas de información  
 
+<<<<<<< HEAD
 **Microsoft Azure Table Storage**
+=======
+### Microsoft Azure Table Storage
+>>>>>>> 713f879a3e9b7f0f505caebc28abdf5b8a754b27
 
 ---
 ### ⚙️ Características Técnicas
@@ -480,23 +484,9 @@ entidad.Value["Edad"] = 33;
 await tableClient.UpdateEntityAsync(entidad, ETag.All);
 
 await tableClient.DeleteEntityAsync("LATAM", "cliente001");
-```
-
----
-
-### 📋 Listas
-
-#### Lista con viñetas:
-* Hola  
-* CodeLab  
-* Mundo  
-
-#### Lista numerada:
-1. Lista  
-2. Utilizando  
-3. Números  
 
 ## IBM Db2
+
 Duration: 0:03:00
 
 ### Cajas de información
