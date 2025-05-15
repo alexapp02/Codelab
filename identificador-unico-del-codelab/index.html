@@ -374,46 +374,174 @@ nodetool tablestats tienda.productos
 
       </google-codelab-step>
     
-      <google-codelab-step label="Google Cloud" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="Google Cloud Bigtable" duration="3">
+        <p><strong>Google Cloud Bigtable</strong> es un servicio de base de datos NoSQL distribuida, desarrollado por Google, que almacena datos en formato de columna. Está diseñado para manejar grandes volúmenes de datos de manera escalable, con baja latencia y alta disponibilidad.</p>
+<p>Bigtable utiliza un esquema de tipo clave-valor, pero con una estructura orientada por columnas. Esto significa que los datos se organizan en familias de columnas, lo que permite acceder a conjuntos de datos muy específicos de forma eficiente.</p>
+<h2 is-upgraded>Herramientas del ecosistema Google Cloud</h2>
+<p>Google Cloud Bigtable está basado en el modelo descrito por Google en un artículo técnico publicado en 2006. En él, se describe cómo Bigtable fue diseñado para manejar datos distribuidos a gran escala dentro de Google, con casos de uso como <strong>Google Search</strong>, <strong>Google Maps</strong> y <strong>Google Analytics</strong>.</p>
+<p>Bigtable se integra fácilmente con otras herramientas del ecosistema de Google Cloud. Por ejemplo, se puede usar junto con:</p>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li><strong>Dataflow</strong>, para procesar flujos de datos en tiempo real.</li>
+<li><strong>Dataproc</strong>, para ejecutar cargas de trabajo tipo Hadoop o Spark.</li>
+<li>Y con <strong>AI Platform</strong>, para entrenar modelos de machine learning usando los datos almacenados en Bigtable.</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
+<h2 is-upgraded>Ventajas de Bigtable:</h2>
 <ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
+<li><strong>Alta escalabilidad:</strong> Puede manejar petabytes de datos sin perder rendimiento.</li>
+<li><strong>Baja latencia:</strong> Permite acceder a los datos rápidamente, incluso bajo grandes volúmenes.</li>
+<li><strong>Alta disponibilidad:</strong> Diseñado para operar sin interrupciones, incluso si hay fallas en servidores o regiones.</li>
+<li><strong>Integración con el ecosistema de Google Cloud:</strong> Se complementa con herramientas de análisis, inteligencia artificial y procesamiento de datos en la nube.</li>
+<li><strong>Modelo flexible:</strong> No requiere una estructura fija, lo que permite almacenar diferentes tipos de datos sin necesidad de redefinir el esquema.</li>
+<li><strong>Consistencia fuerte por fila:</strong> Las operaciones sobre una fila son atómicas y consistentes.</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<h2 is-upgraded>Casos de uso</h2>
+<ul>
+<li><strong>Análisis de series temporales:</strong> Como métricas de sensores, datos de IoT o monitoreo de rendimiento (ej: Stackdriver Monitoring de Google).</li>
+<li><strong>Personalización y recomendación:</strong> Bases de datos de perfiles de usuarios y actividades para sugerencias personalizadas.</li>
+<li><strong>Procesamiento de datos a gran escala:</strong> Almacenamiento de logs o información estructurada que se analiza con herramientas como Apache Beam o Dataflow.</li>
+<li><strong>Machine Learning:</strong> Almacenamiento de datasets grandes y estructurados para modelos de aprendizaje automático.</li>
+<li><strong>Gaming:</strong> Registro de eventos, puntuaciones y actividades de jugadores en tiempo real.</li>
+</ul>
+<h2 is-upgraded>Comandos en Bigtable</h2>
+<h3 is-upgraded>Tablas:</h3>
+<ul>
+<li><strong>Creación de tablas:</strong></li>
+</ul>
+<p><img alt="Comando1" src="img\\93e622062cce0059.png"> Estamos creando una tabla llamada &#34;my-table&#34;.</p>
+<ul>
+<li><strong>Consultar tus tablas:</strong></li>
+</ul>
+<p><img alt="Comando2" src="img\\c97213adb3514469.png"> Podemos generar una lista con todas las tablas generadas.</p>
+<ul>
+<li><strong>Agregar una familia de columnas:</strong></li>
+</ul>
+<p><img alt="Comando3" src="img\\f3de9638cc938c2f.png"> Aquí le estamos agregando a la tabla &#34;my-table&#34; una familia de columnas llamadas &#34;cf1&#34;.</p>
+<ul>
+<li><strong>Consultar tus familias de columnas</strong></li>
+</ul>
+<p><img alt="Comando4" src="img\\d222ffff9286427f.png"> Con este comando podemos listar las familias de columnas que existen en la tabla &#34;my-table&#34;.</p>
+<ul>
+<li><strong>Eliminar una tabla:</strong></li>
+</ul>
+<p><img alt="Comando5" src="img\\115d6144ab79c22b.png"> Y asi podríamos eliminar la tabla &#34;my-table&#34;.</p>
+<h3 is-upgraded>Registros:</h3>
+<ul>
+<li><strong>Agregar valores a una tabla:</strong></li>
+</ul>
+<p><img alt="Comando6" src="img\\10bad335d7dc0c11.png"> Aquí estamos escribiendo 2 valores de prueba en una fila especifica dentro de la tabla, donde &#34;my-table&#34; es la tabla donde se van a guardar, r1 es el identificador de la fila, cf1 es el nombre de la familia de columnas y c1 es el es el nombre de un campo dentro de la familia.</p>
+<ul>
+<li><strong>Leer los valores agregados a una tabla:</strong></li>
+</ul>
+<p><img alt="Comando7" src="img\\842b765ee34cc9c4.png"> Con este comando podemos hacer que lea todos los datos que se han agregado a la tabla &#34;my-table&#34;.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Microsoft Azure" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Lista con viñetas</h2>
-<p>Texto plano en una lista con viñetas:</p>
+      <google-codelab-step label="Microsoft Azure" duration="0">
+        <p><strong>Duración:</strong> 0:03:00</p>
+<h2 is-upgraded>🧊 Cajas de información</h2>
+<p><strong>Microsoft Azure Table Storage</strong></p>
+<h2 is-upgraded>⚙️ Características Técnicas</h2>
+<ul>
+<li><strong>Modelo NoSQL basado en tablas:</strong> Estructura de almacenamiento tipo key-value con propiedades personalizables.</li>
+<li><strong>Escalabilidad automática:</strong> Capacidad para manejar grandes volúmenes de datos sin configuración adicional.</li>
+<li><strong>Alta disponibilidad y durabilidad:</strong> Garantizado por la infraestructura de Azure.</li>
+<li><strong>Acceso a través de REST API y SDKs:</strong> Compatible con .NET, Java, Python, Node.js, etc.</li>
+<li><strong>Costo-efectivo:</strong> Pago por uso y almacenamiento, ideal para datos semiestructurados.</li>
+</ul>
+<h2 is-upgraded>🚀 Adopción y Casos de Uso</h2>
+<ul>
+<li><strong>Microsoft Services:</strong> Almacén de telemetría y eventos.<br><img alt="Microsoft" src="img\\30206268157304f6.png"></li>
+<li><strong>IoT Solutions:</strong> Almacenamiento de datos de sensores.<br><img alt="IoT" src="img\\1502b10f0f5137dc.png"></li>
+<li><strong>Aplicaciones Web:</strong> Guardado de perfiles de usuarios y sesiones.<br><img alt="WebApp" src="img\\3114a2e09dd2e4c3.png"></li>
+<li><strong>Gaming Backends:</strong> Datos de jugadores, puntuaciones y configuraciones.<br><img alt="Gaming" src="img\\d5dd72c17701859.png"></li>
+<li><strong>Logs y Auditorías:</strong> Eventos de sistemas distribuidos.<br><img alt="Logs" src="img\\bd9edad8a071a366.png"></li>
+</ul>
+<h2 is-upgraded>🧪 Operaciones Básicas en Table Storage (REST o SDK)</h2>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Operación</p>
+</td><td colspan="1" rowspan="1"><p>Descripción</p>
+</td><td colspan="1" rowspan="1"><p>Ejemplo SDK (.NET)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Insert</p>
+</td><td colspan="1" rowspan="1"><p>Agrega una nueva entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.AddEntityAsync(entidad);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Retrieve</p>
+</td><td colspan="1" rowspan="1"><p>Obtiene una entidad por clave</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Update</p>
+</td><td colspan="1" rowspan="1"><p>Modifica una entidad existente</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.UpdateEntityAsync(entidad, ETag.All);</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Delete</p>
+</td><td colspan="1" rowspan="1"><p>Elimina una entidad</p>
+</td><td colspan="1" rowspan="1"><p><code>await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Query</p>
+</td><td colspan="1" rowspan="1"><p>Busca múltiples entidades</p>
+</td><td colspan="1" rowspan="1"><p><code>tableClient.QueryAsync<T>(f => f.Prop == "valor");</code></p>
+</td></tr>
+</table>
+<h2 is-upgraded>❗ Problemas Comunes en la Configuración</h2>
+<ul>
+<li>Falta de conexión al Storage Account.</li>
+<li>Errores de autenticación con claves mal configuradas.</li>
+<li>Acceso desde SDKs sin roles o permisos asignados.</li>
+<li>Restricciones de red en cuentas de almacenamiento.</li>
+<li>Formatos incorrectos en <code>PartitionKey</code> o <code>RowKey</code>.</li>
+</ul>
+<h2 is-upgraded>💻 Compatibilidad</h2>
+<ul>
+<li><strong>Lenguajes Soportados:</strong><ul>
+<li>.NET (C#), Python, Java, Node.js, Go</li>
+</ul>
+</li>
+<li><strong>Acceso multiplataforma:</strong><ul>
+<li>Usable desde Windows, Linux o macOS</li>
+</ul>
+</li>
+<li><strong>Integración nativa con servicios de Azure:</strong><ul>
+<li>Azure Functions, Logic Apps, Event Grid</li>
+</ul>
+</li>
+</ul>
+<h2 is-upgraded>🔧 Demostración Práctica</h2>
+<h3 is-upgraded>Paso a paso en .NET</h3>
+<pre><code language="language-csharp" class="language-csharp">var serviceClient = new TableServiceClient(&#34;&lt;Connection_String&gt;&#34;);
+var tableClient = serviceClient.GetTableClient(&#34;clientes&#34;);
+await tableClient.CreateIfNotExistsAsync();
+
+var cliente = new TableEntity(&#34;LATAM&#34;, &#34;cliente001&#34;)
+{
+    { &#34;Nombre&#34;, &#34;Carlos&#34; },
+    { &#34;Correo&#34;, &#34;carlos@email.com&#34; },
+    { &#34;Edad&#34;, 32 }
+};
+await tableClient.AddEntityAsync(cliente);
+
+var entidad = await tableClient.GetEntityAsync&lt;TableEntity&gt;(&#34;LATAM&#34;, &#34;cliente001&#34;);
+Console.WriteLine(entidad.Value[&#34;Nombre&#34;]);
+
+entidad.Value[&#34;Edad&#34;] = 33;
+await tableClient.UpdateEntityAsync(entidad, ETag.All);
+
+await tableClient.DeleteEntityAsync(&#34;LATAM&#34;, &#34;cliente001&#34;);
+</code></pre>
+<h2 is-upgraded>📋 Listas</h2>
+<h3 is-upgraded>Lista con viñetas:</h3>
 <ul>
 <li>Hola</li>
 <li>CodeLab</li>
 <li>Mundo</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
+<h3 is-upgraded>Lista numerada:</h3>
 <ol type="1">
 <li>Lista</li>
 <li>Utilizando</li>
 <li>Números</li>
 </ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
 
 
       </google-codelab-step>
