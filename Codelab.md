@@ -503,26 +503,24 @@ await tableClient.UpdateEntityAsync(entidad, ETag.All);
 
 await tableClient.DeleteEntityAsync("LATAM", "cliente001");
 
-## IBM Db2
-
-Duration: 0:03:00
-
+```
+## 📘IBM Db2
 
 En este paso, conocerás las características de IBM Db2 cuando trabaja en modo columnar usando su tecnología **BLU Acceleration**, ideal para cargas analíticas intensivas.
 
-###  Objetivo
+### 🎯 Objetivo
 
 Comprender cómo IBM Db2 maneja datos en columnas, sus beneficios, limitaciones y ejemplos básicos de manipulación de datos usando SQL.
 
 ---
 
-### ¿Qué es IBM Db2 con BLU Acceleration?
+### 🔍 ¿Qué es IBM Db2 con BLU Acceleration?
 
 IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecnología **BLU Acceleration** permite procesar los datos de forma **columnar**, optimizando operaciones analíticas sobre grandes volúmenes de información.
 
 ---
 
-### Características principales
+### 🧠 Características principales
 
 | Característica              | Descripción                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
@@ -534,34 +532,34 @@ IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecn
 
 ---
 
-### Ventajas
+### ✅ Ventajas
 
-- Alto rendimiento en cargas analíticas (OLAP).
-- Menor consumo de almacenamiento gracias a la compresión.
-- Compatible con herramientas de BI y ecosistemas de datos.
-- Menor intervención del DBA para optimización.
-
----
-
-### Desventajas
-
-- No está optimizado para cargas transaccionales (OLTP).
-- Puede requerir licencias costosas y hardware potente.
-- No todos los tipos de carga de trabajo se benefician de BLU.
+- 🚀 Alto rendimiento en cargas analíticas (OLAP).
+- 📉 Menor consumo de almacenamiento gracias a la compresión.
+- 🧩 Compatible con herramientas de BI y ecosistemas de datos.
+- 🔧 Menor intervención del DBA para optimización.
 
 ---
 
-### Casos de uso recomendados
+### ⚠️ Desventajas
 
-- Análisis de ventas históricas.
-- Inteligencia de negocios en sector salud.
-- Análisis de riesgo financiero.
-- Reporting casi en tiempo real con dashboards.
-- Evaluación de rendimiento de campañas de marketing digital.
+- ❌ No está optimizado para cargas transaccionales (OLTP).
+- 💰 Puede requerir licencias costosas y hardware potente.
+- 🔄 No todos los tipos de carga de trabajo se benefician de BLU.
 
 ---
 
-### Ejemplos básicos con SQL
+### 💼 Casos de uso recomendados
+
+- 📊 Análisis de ventas históricas.
+- 🏥 Inteligencia de negocios en sector salud.
+- 🏦 Análisis de riesgo financiero.
+- 📈 Reporting casi en tiempo real con dashboards.
+- 🛍️ Evaluación de rendimiento de campañas de marketing digital.
+
+---
+
+### 🛠️ Ejemplos básicos con SQL
 
 ```sql
 -- Selección de columnas
