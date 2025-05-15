@@ -14,30 +14,48 @@ analytics account: UA-XXXXXX-X
 ## ¿Qué es "Orientado a Columnas"?
 Duration: 0:03:00
 
-### Cajas de información
-Texto plano.
+Las bases de datos orientadas a columnas son un tipo de almacenamiento NoSQL que organiza los datos por columnas en lugar de por filas, lo que ofrece ventajas significativas para ciertos casos de uso.
 
-### Añade una imagen
-¡Añadiendo una imagen!
+### Concepto fundamental
 
-![Descripción de la imagen](assets/prueba.png)
+Almacena datos agrupados por columnas, en lugar de por filas como las bases de datos tradicionales. Esto permite:
 
+* Lecturas y agregaciones de columnas muy rápidas, ideal para analítica
+* Compresión eficiente de datos similares agrupados
+* Acceso optimizado a subconjuntos específicos de datos
 
-### Lista con viñetas (IBM Db2)
-Texto plano en una lista con viñetas:
+A veces se conoce como "wide-column store" o almacén de columnas anchas.
 
-* Hola
-* CodeLab
-* Mundo
+### Modelo de Datos
 
-¡Ya tienes tu lista con viñetas creada!
+* **Column Family**: similar a tabla; agrupa columnas relacionadas
+* **Row Key**: clave única de cada fila
+* **Columns**: pares (nombre, valor, timestamp)
+* **Super-columnas** (opcional): agrupaciones de columnas anidadas
 
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
+![Modelo de datos orientado a columnas](assets/modelo_datos.png)
 
-¡Ya tienes tu lista numerada creada!
+### Casos de Uso
+
+Las bases de datos orientadas a columnas son ideales para:
+
+* **Análisis de clickstream y comportamiento web**: Registro de eventos de usuarios (clics, páginas vistas, tiempo en página) con timestamps.
+* **Telemetría de IoT a gran escala**: Recogida continua de millones de métricas (temperatura, presión, humedad, posición GPS) desde dispositivos y sensores distribuidos.
+* **Paneles de métricas y dashboards en tiempo real**: Monitorización de KPIs (ventas por canal, visitas, tasa de conversión) con actualizaciones cada pocos segundos.
+
+### Ventajas y Desventajas
+
+#### Ventajas
+* Altas tasas de escritura y lectura de columnas específicas
+* Excelente compresión y ahorro de espacio
+* Escalado horizontal sencillo y alta disponibilidad
+* Consistencia ajustable (tunable consistency)
+
+#### Desventajas
+* Consultas complejas no óptimas (no SQL JOIN)
+* Carga incremental de datos puede ser subóptima
+* Menor madurez de herramientas BI frente a RDBMS
+* Curva de aprendizaje en diseño de esquema y tuning
 
 ## Apache Casandra
 Duration: 0:05:00
