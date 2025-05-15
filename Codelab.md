@@ -505,6 +505,7 @@ await tableClient.DeleteEntityAsync("LATAM", "cliente001");
 
 ```
 ## 📘IBM Db2
+![Imagen 1](assets/klipartz.com.png)
 
 En este paso, conocerás las características de IBM Db2 cuando trabaja en modo columnar usando su tecnología **BLU Acceleration**, ideal para cargas analíticas intensivas.
 
