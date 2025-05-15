@@ -336,72 +336,77 @@ Texto plano en una lista con viñetas:
 ¡Ya tienes tu lista numerada creada!
 
 
-## Microsoft Azure
-Duration: 0:03:00
-
-# Microsoft Azure Table Storage
+## Microsoft Azure  
+**Duración:** 0:03:00
 
 ---
 
-### Características Técnicas
+### 🧊 Cajas de información  
+**Microsoft Azure Table Storage**
 
-* **Modelo NoSQL basado en tablas:** Estructura de almacenamiento tipo key-value con propiedades personalizables.
-* **Escalabilidad automática:** Capacidad para manejar grandes volúmenes de datos sin configuración adicional.
-* **Alta disponibilidad y durabilidad:** Garantizado por la infraestructura de Azure.
-* **Acceso a través de REST API y SDKs:** Compatible con .NET, Java, Python, Node.js, etc.
+---
+
+### ⚙️ Características Técnicas
+
+* **Modelo NoSQL basado en tablas:** Estructura de almacenamiento tipo key-value con propiedades personalizables.  
+* **Escalabilidad automática:** Capacidad para manejar grandes volúmenes de datos sin configuración adicional.  
+* **Alta disponibilidad y durabilidad:** Garantizado por la infraestructura de Azure.  
+* **Acceso a través de REST API y SDKs:** Compatible con .NET, Java, Python, Node.js, etc.  
 * **Costo-efectivo:** Pago por uso y almacenamiento, ideal para datos semiestructurados.
 
 ---
 
-### Adopción y Casos de Uso
+### 🚀 Adopción y Casos de Uso
 
-* **Microsoft Services:** Almacén de telemetría y eventos.
-![Microsoft](assets/Microsoft.png)
-* **IoT Solutions:** Almacenamiento de datos de sensores.
-![IoT](assets/IoT.png)
-* **Aplicaciones Web:** Guardado de perfiles de usuarios y sesiones.
-![WebApp](assets/WebApp.png)
-* **Gaming Backends:** Datos de jugadores, puntuaciones y configuraciones.
-![Gaming](assets/Gaming.png)
-* **Logs y Auditorías:** Eventos de sistemas distribuidos.
-![Logs](assets/Logs.png)
-
----
-
-### Operaciones Básicas en Table Storage (REST o SDK)
-
-| Operación | Descripción | Ejemplo SDK (.NET) |
-|----------|-------------|---------------------|
-| Insert   | Agrega una nueva entidad | `await tableClient.AddEntityAsync(entidad);` |
-| Retrieve | Obtiene una entidad por clave | `await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");` |
-| Update   | Modifica una entidad existente | `await tableClient.UpdateEntityAsync(entidad, ETag.All);` |
-| Delete   | Elimina una entidad | `await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");` |
-| Query    | Busca múltiples entidades | `tableClient.QueryAsync<T>(f => f.Prop == "valor");` |
+* **Microsoft Services:** Almacén de telemetría y eventos.  
+  ![Microsoft](assets/Microsoft.png)
+* **IoT Solutions:** Almacenamiento de datos de sensores.  
+  ![IoT](assets/IoT.png)
+* **Aplicaciones Web:** Guardado de perfiles de usuarios y sesiones.  
+  ![WebApp](assets/WebApp.png)
+* **Gaming Backends:** Datos de jugadores, puntuaciones y configuraciones.  
+  ![Gaming](assets/Gaming.png)
+* **Logs y Auditorías:** Eventos de sistemas distribuidos.  
+  ![Logs](assets/Logs.png)
 
 ---
 
-### Problemas Comunes en la Configuración
+### 🧪 Operaciones Básicas en Table Storage (REST o SDK)
 
-* **Falta de conexión al Storage Account.**
-* **Errores de autenticación con claves mal configuradas.**
-* **Acceso desde SDKs sin roles o permisos asignados.**
-* **Restricciones de red en cuentas de almacenamiento.**
-* **Formatos incorrectos en PartitionKey o RowKey.**
-
----
-
-### Compatibilidad
-
-* **Lenguajes Soportados:**
-  * .NET (C#), Python, Java, Node.js, Go.
-* **Acceso multiplataforma:** Usable desde Windows, Linux o MacOS.
-* **Integración nativa con otros servicios de Azure (Functions, Logic Apps, Event Grid).**
+| Operación | Descripción                   | Ejemplo SDK (.NET)                                         |
+|-----------|-------------------------------|------------------------------------------------------------|
+| Insert    | Agrega una nueva entidad      | `await tableClient.AddEntityAsync(entidad);`              |
+| Retrieve  | Obtiene una entidad por clave | `await tableClient.GetEntityAsync<T>("PartitionKey", "RowKey");` |
+| Update    | Modifica una entidad existente| `await tableClient.UpdateEntityAsync(entidad, ETag.All);` |
+| Delete    | Elimina una entidad           | `await tableClient.DeleteEntityAsync("PartitionKey", "RowKey");` |
+| Query     | Busca múltiples entidades     | `tableClient.QueryAsync<T>(f => f.Prop == "valor");`      |
 
 ---
 
-### Demostración Práctica
+### ❗ Problemas Comunes en la Configuración
 
-#### 1. Configurar acceso al servicio
+* Falta de conexión al Storage Account.  
+* Errores de autenticación con claves mal configuradas.  
+* Acceso desde SDKs sin roles o permisos asignados.  
+* Restricciones de red en cuentas de almacenamiento.  
+* Formatos incorrectos en `PartitionKey` o `RowKey`.
+
+---
+
+### 💻 Compatibilidad
+
+* **Lenguajes Soportados:**  
+  * .NET (C#), Python, Java, Node.js, Go  
+* **Acceso multiplataforma:**  
+  * Usable desde Windows, Linux o macOS  
+* **Integración nativa con servicios de Azure:**  
+  * Azure Functions, Logic Apps, Event Grid
+
+---
+
+### 🔧 Demostración Práctica
+
+#### Paso a paso en .NET
 
 ```csharp
 var serviceClient = new TableServiceClient("<Connection_String>");
@@ -423,26 +428,21 @@ entidad.Value["Edad"] = 33;
 await tableClient.UpdateEntityAsync(entidad, ETag.All);
 
 await tableClient.DeleteEntityAsync("LATAM", "cliente001");
+```
 
-### Cajas de información
-Texto plano.
+---
 
-### Lista con viñetas
-Texto plano en una lista con viñetas:
+### 📋 Listas
 
-* Hola
-* CodeLab
-* Mundo
+#### Lista con viñetas:
+* Hola  
+* CodeLab  
+* Mundo  
 
-¡Ya tienes tu lista con viñetas creada!
-
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
-
-¡Ya tienes tu lista numerada creada!
-
+#### Lista numerada:
+1. Lista  
+2. Utilizando  
+3. Números  
 
 ## IBM Db2
 Duration: 0:03:00
