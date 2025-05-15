@@ -507,21 +507,74 @@ await tableClient.DeleteEntityAsync("LATAM", "cliente001");
 
 Duration: 0:03:00
 
-### Cajas de información
-Texto plano.
+En este paso, conocerás las características de IBM Db2 cuando trabaja en modo columnar usando su tecnología **BLU Acceleration**, ideal para cargas analíticas intensivas.
 
-### Lista con viñetas
-Texto plano en una lista con viñetas:
+###  Objetivo
 
-* Hola
-* CodeLab
-* Mundo
+Comprender cómo IBM Db2 maneja datos en columnas, sus beneficios, limitaciones y ejemplos básicos de manipulación de datos usando SQL.
 
-¡Ya tienes tu lista con viñetas creada!
+---
 
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
+###  ¿Qué es IBM Db2 con BLU Acceleration?
 
-¡Ya tienes tu lista numerada creada!
+IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecnología **BLU Acceleration** permite procesar los datos de forma **columnar**, optimizando operaciones analíticas sobre grandes volúmenes de información.
+
+---
+
+###  Características principales
+
+| Característica              | Descripción                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| Almacenamiento columnar     | Los datos se almacenan y procesan por columnas, lo cual mejora la eficiencia de lectura en consultas. |
+| Compresión avanzada         | BLU aplica técnicas de compresión para reducir espacio en disco y acelerar el acceso a datos. |
+| Procesamiento en memoria    | Optimiza el uso de la RAM priorizando columnas frecuentemente consultadas. |
+| Eliminación de índices      | No necesita índices ni agregaciones predefinidas, ya que escanea columnas rápidamente. |
+| Compatibilidad SQL          | Utiliza sintaxis SQL estándar, facilitando su uso con herramientas existentes. |
+
+---
+
+###  Ventajas
+
+-  Alto rendimiento en cargas analíticas (OLAP).
+-  Menor consumo de almacenamiento gracias a la compresión.
+-  Compatible con herramientas de BI y ecosistemas de datos.
+-  Menor intervención del DBA para optimización.
+
+---
+
+###  Desventajas
+
+-  No está optimizado para cargas transaccionales (OLTP).
+-  Puede requerir licencias costosas y hardware potente.
+-  No todos los tipos de carga de trabajo se benefician de BLU.
+
+---
+
+###  Casos de uso recomendados
+
+-  Análisis de ventas históricas.
+-  Inteligencia de negocios en sector salud.
+-  Análisis de riesgo financiero.
+-  Reporting casi en tiempo real con dashboards.
+-  Evaluación de rendimiento de campañas de marketing digital.
+
+---
+
+###  Ejemplos básicos con SQL
+
+```sql
+-- Selección de columnas
+SELECT nombre, apellido FROM empleados WHERE salario > 5000;
+
+-- Inserción de un nuevo registro
+INSERT INTO empleados (id, nombre, apellido, salario) 
+VALUES (1, 'Juan', 'Pérez', 6000);
+
+-- Actualización de salarios
+UPDATE empleados 
+SET salario = salario * 1.05 
+WHERE departamento = 'Ventas';
+
+-- Eliminación de registros
+DELETE FROM empleados 
+WHERE salario < 2000;
