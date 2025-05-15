@@ -513,7 +513,7 @@ await tableClient.DeleteEntityAsync("LATAM", "cliente001");
 
 IBM Db2 es un sistema de bases de datos relacional desarrollado por IBM. Su tecnología **BLU Acceleration** permite procesar los datos de forma **columnar**, optimizando operaciones analíticas sobre grandes volúmenes de información.
 
-![Imagen 2](assets/Servidor IBM Db2 en detalle.png)
+
 ---
 
 ### 🧠 Características principales
@@ -570,7 +570,8 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 - O bien, estar dispuesto a instalar Db2 directamente en tu sistema.
 
 ---
-
+![Imagen 2](assetsServidor IBM Db2 en detalle.png)
+---
 ### 🅰️ Opción A: Instalación rápida con Docker (recomendada)
 
 La forma más rápida de probar Db2 sin configurar nada manualmente es usar **Docker**.
@@ -594,8 +595,74 @@ docker run -itd --name db2 \
   ibmcom/db2
 
 ```
-### 🛠️ Ejemplos básicos con SQL
+---
+Esto hace lo siguiente:
 
+- Crea un contenedor con Db2.
+- Asigna la contraseña del usuario principal.
+- Expone el puerto 50000 para conexiones externas.
+---
+Para verificar si esta corriendo 
+```bash
+docker logs -f db2
+```
+---
+Y por ultiimo la conexin la haces por medio de  herramientas como DBeaver, IBM Data Studio o desde línea de comandos con el cliente db2cli
+---
+```bash
+Host: localhost
+Puerto: 50000
+Usuario: db2inst1
+Contraseña: clave123
+```
+---
+## 🅱️ Opción B: Instalación manual de IBM Db2 Community Edition en Windows o Linux
+
+Si no deseas usar Docker, puedes instalar Db2 directamente en tu sistema operativo. Este método te permite tener más control sobre la instalación y configuración.
+
+---
+
+### 📥 Paso 1: Ir al sitio oficial
+
+1. Visita el sitio oficial de IBM Db2:  
+   👉 [https://www.ibm.com/products/db2](https://www.ibm.com/products/db2)
+
+2. Haz clic en **"Try free"** o "Download Community Edition".
+
+3. Regístrate con una cuenta IBM (gratuita) si aún no tienes una.
+
+4. Elige tu sistema operativo (Windows o Linux) y descarga el instalador correspondiente:
+
+- Para Windows: `db2setup.exe`
+- Para Linux: `.tar.gz`
+
+---
+
+### 🪟 Instalación en Windows
+
+#### 📁 Paso 2: Ejecutar el instalador
+
+1. Ubica el archivo `db2setup.exe` descargado.
+2. Haz clic derecho y selecciona **"Ejecutar como administrador"**.
+3. Sigue los pasos del asistente:
+
+   - Elige “Instalación típica”.
+   - Crea un nuevo usuario de sistema (ejemplo: `db2admin`).
+   - Establece una contraseña para este usuario.
+   - Finaliza la instalación.
+
+#### ✅ Paso 3: Verificar que Db2 funciona
+
+1. Abre el **Db2 Command Line Processor** como administrador.
+2. Ejecuta los siguientes comandos:
+
+```bash
+db2start
+db2 create db testdb
+db2 connect to testdb
+```
+---
+### 🛠️ Ejemplos básicos con SQL
 ```sql
 -- Selección de columnas
 SELECT nombre, apellido FROM empleados WHERE salario > 5000;
