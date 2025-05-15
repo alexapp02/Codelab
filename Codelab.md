@@ -331,27 +331,79 @@ nodetool status
 nodetool tablestats tienda.productos
 ```
 
-## Google Cloud
+## Google Cloud Bigtable
 Duration: 0:03:00
 
-### Cajas de información
-Texto plano.
+**Google Cloud Bigtable** es un servicio de base de datos NoSQL distribuida, desarrollado por Google, que almacena datos en formato de columna. Está diseñado para manejar grandes volúmenes de datos de manera escalable, con baja latencia y alta disponibilidad.
 
-### Lista con viñetas
-Texto plano en una lista con viñetas:
+Bigtable utiliza un esquema de tipo clave-valor, pero con una estructura orientada por columnas. Esto significa que los datos se organizan en familias de columnas, lo que permite acceder a conjuntos de datos muy específicos de forma eficiente.
 
-* Hola
-* CodeLab
-* Mundo
+### Herramientas del ecosistema Google Cloud
 
-¡Ya tienes tu lista con viñetas creada!
+Google Cloud Bigtable está basado en el modelo descrito por Google en un artículo técnico publicado en 2006. En él, se describe cómo Bigtable fue diseñado para manejar datos distribuidos a gran escala dentro de Google, con casos de uso como **Google Search**, **Google Maps** y **Google Analytics**.
 
-### Lista numerada
-1. Lista
-2. Utilizando
-3. Números
+Bigtable se integra fácilmente con otras herramientas del ecosistema de Google Cloud. Por ejemplo, se puede usar junto con:
 
-¡Ya tienes tu lista numerada creada!
+* **Dataflow**, para procesar flujos de datos en tiempo real.
+* **Dataproc**, para ejecutar cargas de trabajo tipo Hadoop o Spark.
+* Y con **AI Platform**, para entrenar modelos de machine learning usando los datos almacenados en Bigtable.
+
+### Ventajas de Bigtable:
+1. **Alta escalabilidad:** Puede manejar petabytes de datos sin perder rendimiento.
+2. **Baja latencia:** Permite acceder a los datos rápidamente, incluso bajo grandes volúmenes.
+3. **Alta disponibilidad:** Diseñado para operar sin interrupciones, incluso si hay fallas en servidores o regiones.
+4. **Integración con el ecosistema de Google Cloud:** Se complementa con herramientas de análisis, inteligencia artificial y procesamiento de datos en la nube.
+5. **Modelo flexible:** No requiere una estructura fija, lo que permite almacenar diferentes tipos de datos sin necesidad de redefinir el esquema.
+6. **Consistencia fuerte por fila:** Las operaciones sobre una fila son atómicas y consistentes.
+
+### Casos de uso
+
+* **Análisis de series temporales:** Como métricas de sensores, datos de IoT o monitoreo de rendimiento (ej: Stackdriver Monitoring de Google).
+* **Personalización y recomendación:** Bases de datos de perfiles de usuarios y actividades para sugerencias personalizadas.
+* **Procesamiento de datos a gran escala:** Almacenamiento de logs o información estructurada que se analiza con herramientas como Apache Beam o Dataflow.
+* **Machine Learning:** Almacenamiento de datasets grandes y estructurados para modelos de aprendizaje automático.
+* **Gaming:** Registro de eventos, puntuaciones y actividades de jugadores en tiempo real.
+
+### Comandos en Bigtable
+
+#### Tablas:
+
+* **Creación de tablas:**
+
+ ![Comando1](assets/crearTabla.png)
+  Estamos creando una tabla llamada “my-table”.
+
+* **Consultar tus tablas:**
+
+![Comando2](assets/consultarTabla.png)
+  Podemos generar una lista con todas las tablas generadas.
+
+* **Agregar una familia de columnas:**
+
+![Comando3](assets/agregarFamiliaColumnas.png)
+  Aquí le estamos agregando a la tabla “my-table” una familia de columnas llamadas “cf1”.
+
+* **Consultar tus familias de columnas**
+
+![Comando4](assets/consultarFamiliaColumnas.png)
+  Con este comando podemos listar las familias de columnas que existen en la tabla “my-table”.
+
+* **Eliminar una tabla:**
+
+![Comando5](assets/eliminarTabla.png)
+  Y asi podríamos eliminar la tabla “my-table”.
+
+#### Registros:
+
+* **Agregar valores a una tabla:**
+
+![Comando6](assets/agregarValores.png)
+  Aquí estamos escribiendo 2 valores de prueba en una fila especifica dentro de la tabla, donde “my-table” es la tabla donde se van a guardar, r1 es el identificador de la fila, cf1 es el nombre de la familia de columnas y c1 es el es el nombre de un campo dentro de la familia.
+
+* **Leer los valores agregados a una tabla:**
+
+![Comando7](assets/leerValores.png)
+  Con este comando podemos hacer que lea todos los datos que se han agregado a la tabla “my-table”.
 
 ## Microsoft Azure  
 
@@ -361,10 +413,13 @@ Texto plano en una lista con viñetas:
 
 ### 🧊 Cajas de información  
 
+<<<<<<< HEAD
+**Microsoft Azure Table Storage**
+=======
 ### Microsoft Azure Table Storage
+>>>>>>> 713f879a3e9b7f0f505caebc28abdf5b8a754b27
 
 ---
-
 ### ⚙️ Características Técnicas
 
 * **Modelo NoSQL basado en tablas:** Estructura de almacenamiento tipo key-value con propiedades personalizables.  
