@@ -167,15 +167,19 @@ SELECT * FROM productos p WHERE CONTAINS(p.descripcion, "laptop")
 ```
 
 
-## APACHE HBASE
+## Apache HBase
 Duration: 0:03:00
+
 Es una base de datos no SQL orientada a columnas es decir almacenan registros extensibles. Esta diseñada para grandes conjuntos de datos,  es el mejor entorno para controlar datos estructurados.​
 
+---
 ### Historia
 
 Fue creada por apache software foundation, comenzó como un proyecto que pretendía responder a las necesidades de una empresa llamada Powerset, donde necesitaban una herramienta que pudiera procesar grandes cantidades de datos.Esta fue inspirada por Google por bigtable donde su principal propósito fue crear una base de datos distribuida, hbase ha evolucionado para gestionar el almacenamiento de datos a gran escala y el acceso en tiempo real.
 
 Esta esta creada por filas y columnas, donde sus columnas se agrupan en columnas de familia, esta puede almacenar los datos de forma separada y distribuida en multiples servidores ya que esta escribe datos en HDFS (Hadoop Distributed File System) en formatos de columnas, asi logrando optimizar el rendimiento de lectura y escritura, HDFS es el sistema de archivos distribuido en Hadoop, es como el dusco duro del cluster pero repartidos entre varias maquinas. Este se ejecuta en un framework llamado apache hadoop
+
+---
 
 ### ventajas y desventajas 
 
@@ -206,21 +210,79 @@ Esta esta creada por filas y columnas, donde sus columnas se agrupan en columnas
 
 ### Instalación y problemas de Apache Hbase
 
-se debe tener presente que antes de descargar apache hadoop se debe instalar primero java en su versión 8 en adelante, tener también instalado previamente hadoop y asi descargar apache hbase con el siguiente link
-"https://dlcdn.apache.org/hbase/3.0.0-beta-1/hbase-3.0.0-beta-1-src.tar.gz"
+*Se debe tener presente que antes de descargar apache hadoop se debe instalar primero java en su versión 8 en adelante
+*tener también instalado previamente hadoop y asi descargar apache hbase con el siguiente link: "https://dlcdn.apache.org/hbase/3.0.0-beta-1/hbase-3.0.0-beta-1-src.tar.gz"
 
 se debe tener en cuanto estos pasos:
-Extraer la carpeta, el el archivo llamdo ~/.bashrc, se escribe unos comandos en la terminal ​
+1. Extraer la carpeta, el el archivo llamdo ~/.bashrc, se escribe unos comandos en la terminal ​
 *nano ~/.bashrc​
 *export HADOOP_HOME=~/hadoop​
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin​
-export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop​
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 
+*export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin​
+*export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop​
+*export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 
 
 algunos problemas de instalación 
 1. Asegurar bien si java esta bien configurada, si no puede fallar HBase
 2. Asegurar que hadoop este bien instalado y bien configurado, si no aparecerá error en HBase
 3. mal configuración de archivos.
+
+## DataStax Enterprise
+### ¿Qué es DataStax Enterprise (DSE)?
+
+*DataStax Enterprise* es una plataforma de datos distribuida que amplía Apache Cassandra con características empresariales avanzadas. Es más poderosa y flexible que usar solo Cassandra.
+
+---
+
+### COMPONENTES CLAVE DE DSE
+
+| Componente         | Descripción                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| *DSE Core*        | Motor de base de datos distribuida basado en Apache Cassandra.             |
+| *DSE Search*      | Búsqueda avanzada tipo full-text usando Apache Solr.                       |
+| *DSE Analytics*   | Integración con Apache Spark para análisis distribuidos.                   |
+| *DSE Graph*       | Base de datos de grafos escalable para relaciones complejas.               |
+| *Seguridad Empresarial* | Autenticación, autorización, cifrado, auditoría avanzada.          |
+| *DSE Studio*      | Interfaz visual para trabajar con datos, CQL, Spark y Graph.               |
+| *DSE OpsCenter*   | Herramienta de monitoreo y administración visual del clúster.              |
+
+---
+
+### DIFERENCIAS CLAVE CON CASSANDRA
+
+| Función                  | Apache Cassandra        | DataStax Enterprise (DSE)                     |
+|--------------------------|-------------------------|-----------------------------------------------|
+| Modelo base              | Distribuido, NoSQL      | Distribuido, NoSQL                            |
+| Búsqueda Full-Text       | ❌ No                   | ✅ Sí (DSE Search con Solr)                    |
+| Análisis en tiempo real  | ❌ No                   | ✅ Sí (DSE Analytics con Spark)                |
+| Grafos                   | ❌ No                   | ✅ Sí (DSE Graph)                              |
+| Seguridad empresarial    | Básica                  | Avanzada (LDAP, Kerberos, cifrado)            |
+| Administración visual    | ❌ No                   | ✅ Sí (DSE OpsCenter)                          |
+| Soporte comercial        | ❌ Comunidad            | ✅ Oficial de DataStax                         |
+
+---
+
+### ¿Qué puedes hacer en un CodeLab de DataStax con DSE?
+
+Dependiendo del laboratorio, puedes interactuar con:
+
+- CQL (para tablas y consultas básicas)
+- DSE Graph (con Gremlin para grafos)
+- DSE Search (consultas full-text)
+- Spark SQL (para análisis si está habilitado)
+- REST/GraphQL APIs (si hay endpoints activos)
+
+---
+
+### Ejemplo: Crear una tabla con índices de búsqueda
+
+```sql
+CREATE TABLE productos (
+  id UUID PRIMARY KEY,
+  nombre TEXT,
+  descripcion TEXT
+);
+
+```
 
 
 ## ScyllaDB 
