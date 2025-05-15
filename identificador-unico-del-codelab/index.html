@@ -28,26 +28,45 @@
                   feedback-link="https://github.com/tu_usuario/tu_repo/issues">
     
       <google-codelab-step label="¿Qué es &#34;Orientado a Columnas&#34;?" duration="3">
-        <h2 is-upgraded>Cajas de información</h2>
-<p>Texto plano.</p>
-<h2 is-upgraded>Añade una imagen</h2>
-<p>¡Añadiendo una imagen!</p>
-<p class="image-container"><img alt="Descripción de la imagen" src="img\\48b08f0e486ee39d.png"></p>
-<h2 is-upgraded>Lista con viñetas (IBM Db2)</h2>
-<p>Texto plano en una lista con viñetas:</p>
+        <p>Las bases de datos orientadas a columnas son un tipo de almacenamiento NoSQL que organiza los datos por columnas en lugar de por filas, lo que ofrece ventajas significativas para ciertos casos de uso.</p>
+<h2 is-upgraded>Concepto fundamental</h2>
+<p>Almacena datos agrupados por columnas, en lugar de por filas como las bases de datos tradicionales. Esto permite:</p>
 <ul>
-<li>Hola</li>
-<li>CodeLab</li>
-<li>Mundo</li>
+<li>Lecturas y agregaciones de columnas muy rápidas, ideal para analítica</li>
+<li>Compresión eficiente de datos similares agrupados</li>
+<li>Acceso optimizado a subconjuntos específicos de datos</li>
 </ul>
-<p>¡Ya tienes tu lista con viñetas creada!</p>
-<h2 is-upgraded>Lista numerada</h2>
-<ol type="1">
-<li>Lista</li>
-<li>Utilizando</li>
-<li>Números</li>
-</ol>
-<p>¡Ya tienes tu lista numerada creada!</p>
+<p>A veces se conoce como &#34;wide-column store&#34; o almacén de columnas anchas.</p>
+<h2 is-upgraded>Modelo de Datos</h2>
+<ul>
+<li><strong>Column Family</strong>: similar a tabla; agrupa columnas relacionadas</li>
+<li><strong>Row Key</strong>: clave única de cada fila</li>
+<li><strong>Columns</strong>: pares (nombre, valor, timestamp)</li>
+<li><strong>Super-columnas</strong> (opcional): agrupaciones de columnas anidadas</li>
+</ul>
+<p class="image-container"><img alt="Modelo de datos orientado a columnas" src="img\\f891959f79c43ab2.png"></p>
+<h2 is-upgraded>Casos de Uso</h2>
+<p>Las bases de datos orientadas a columnas son ideales para:</p>
+<ul>
+<li><strong>Análisis de clickstream y comportamiento web</strong>: Registro de eventos de usuarios (clics, páginas vistas, tiempo en página) con timestamps.</li>
+<li><strong>Telemetría de IoT a gran escala</strong>: Recogida continua de millones de métricas (temperatura, presión, humedad, posición GPS) desde dispositivos y sensores distribuidos.</li>
+<li><strong>Paneles de métricas y dashboards en tiempo real</strong>: Monitorización de KPIs (ventas por canal, visitas, tasa de conversión) con actualizaciones cada pocos segundos.</li>
+</ul>
+<h2 is-upgraded>Ventajas y Desventajas</h2>
+<h3 is-upgraded>Ventajas</h3>
+<ul>
+<li>Altas tasas de escritura y lectura de columnas específicas</li>
+<li>Excelente compresión y ahorro de espacio</li>
+<li>Escalado horizontal sencillo y alta disponibilidad</li>
+<li>Consistencia ajustable (tunable consistency)</li>
+</ul>
+<h3 is-upgraded>Desventajas</h3>
+<ul>
+<li>Consultas complejas no óptimas (no SQL JOIN)</li>
+<li>Carga incremental de datos puede ser subóptima</li>
+<li>Menor madurez de herramientas BI frente a RDBMS</li>
+<li>Curva de aprendizaje en diseño de esquema y tuning</li>
+</ul>
 
 
       </google-codelab-step>
